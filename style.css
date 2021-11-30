@@ -23,3 +23,15 @@ body {
 img:hover {
     cursor: pointer;
 }
+
+#timer {
+    width: 151px;
+    height: 151px;
+    border-radius: 50%;
+    background-color: #353537;
+    line-height: 151px;
+    text-align: center;
+    color: #fff;
+    font-size: 48px;
+
+}
