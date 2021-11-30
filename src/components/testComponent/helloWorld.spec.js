@@ -7,6 +7,5 @@ test("adds 1 + 2 to equal 3", () => {
 test("should render h1", () => {
   hello();
   const header = document.getElementById("header");
-  // expect(header.innerText).toBe("Hello CodersCamp2021!");
   expect(header).toBeTruthy();
 });

@@ -24,6 +24,11 @@ img:hover {
     cursor: pointer;
 }
 
+.logo {
+    width: 400px;
+    height: 200px;
+}
+
 #timer {
     width: 151px;
     height: 151px;
