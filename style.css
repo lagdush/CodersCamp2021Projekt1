@@ -20,14 +20,21 @@ body {
 }
 
 
+/*LOGO*/
+
 img:hover {
     cursor: pointer;
 }
 
 .logo {
-    width: 400px;
-    height: 200px;
+    width: 27vw;
+    height: 23.5vh;
 }
+
+
+
+
+/*TIMER*/
 
 #timer {
     width: 151px;
@@ -40,3 +47,63 @@ img:hover {
     font-size: 48px;
 
 }
+
+
+/*HALL OF FAME*/
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 40px 1fr 2fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+        "header header header header"
+        ". place player answear";
+    position: absolute;
+    width: 60.5vw;
+    height: 47vh;
+    right: 5vw;
+    bottom: 11.8vh;
+    padding: 20px 28px;
+    background-color: #494949;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+}
+
+.ranking {
+    display: flex;
+    grid-area: header;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+
+.ranking p {
+    color: white;
+    padding: 20px;
+    font-size: 2.6rem;
+    font-family: arial, sans-serif;
+    text-transform:capitalize;
+}
+
+
+.wrapper>p {
+    font-size: 36px;
+    color:#fff;
+    text-align: left;
+}
+
+p:nth-child(1) {
+   grid-area: place;
+}
+
+
+p:nth-child(2) {
+    grid-area: player;
+ }
+
+ 
+p:nth-child(3) {
+    grid-area: answear;
+ }
+ 
