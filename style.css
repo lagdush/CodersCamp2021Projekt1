@@ -54,7 +54,7 @@ img:hover {
 .wrapper {
     display: grid;
     grid-template-columns: 40px 1fr 2fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(7, 1fr);
     grid-template-areas:
         "header header header header"
         ". place player answear";
@@ -81,14 +81,14 @@ img:hover {
 .ranking p {
     color: white;
     padding: 20px;
-    font-size: 2.6rem;
+    font-size: 2.2vw;
     font-family: arial, sans-serif;
     text-transform:capitalize;
 }
 
 
 .wrapper>p {
-    font-size: 36px;
+    font-size: 1.86vw;
     color:#fff;
     text-align: left;
 }

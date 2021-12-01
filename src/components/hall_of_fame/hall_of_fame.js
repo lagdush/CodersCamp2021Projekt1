@@ -1,4 +1,4 @@
-export const hallOfFame = () => {
+export const createHallOfFame = () => {
 
     const wrapper = document.createElement("div");
     wrapper.classList.add("wrapper");
@@ -9,19 +9,20 @@ export const hallOfFame = () => {
     const p = document.createElement("p")
     p.innerText = 'Mode Ranking'
 
-    let multiP = document.createElement("p");
-    multiP.textContent = 'Place';
-    wrapper.append(multiP);   
+    const place = document.createElement("p");
+    place.textContent = 'Place';
+    wrapper.append(place);
 
-    multiP = document.createElement("p");
-    multiP.textContent = 'Player';
-    wrapper.append(multiP);   
+    const player = document.createElement("p");
+    player.textContent = 'Player';
+    wrapper.append(player);
 
-    multiP = document.createElement("p");
-    multiP.textContent = 'Answeared';
-    wrapper.append(multiP);   
+    const answers = document.createElement("p");
+    answers.textContent = 'Answers';
+    wrapper.append(answers);
 
     document.getElementById("app").appendChild(wrapper);
     wrapper.append(header);
     header.append(icon, p);
 }
+
