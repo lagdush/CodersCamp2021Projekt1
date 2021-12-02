@@ -18,12 +18,8 @@ export const createTimer = () => {
 
     }, 1000);
 
-    function prettyPrint(timeLeft) {
-        if (timeLeft >= 10) {
-            return '00' + ':' + timeLeft;
-        } else {
-            return '00' + ':' + '0' + timeLeft;
-        }
+    function prettyPrint(timeLeft) 
+        {
+            return (timeLeft >=10 ? '00' + ':' + timeLeft : '00' + ':' + '0' + timeLeft);}
     }
 
-}
