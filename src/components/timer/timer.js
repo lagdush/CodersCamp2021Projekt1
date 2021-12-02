@@ -1,4 +1,4 @@
-export const time = () => {
+export const createTimer = () => {
 
     const timer = document.createElement("div");
     timer.setAttribute("id", "timer")
