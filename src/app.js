@@ -1,7 +1,7 @@
-import { hello } from "./components/testComponent/helloWorld";
+// import { hello } from "./components/testComponent/helloWorld";
 
-const app = () => {
-  hello();
-};
+// const app = () => {
+//   hello();
+// };
 
-export default app;
+// export default app;

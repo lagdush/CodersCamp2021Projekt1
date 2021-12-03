@@ -6,10 +6,22 @@
   color: #2c3e50;
   margin-top: 60px;
 }
+* {
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
 body {
   background-image: url(src/image/bg-image.jpg);
+  width: 100vw;
+  height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 100vh;
-  min-width: 100vw;
+  background-position: center, center;
+  background-attachment: fixed
+}
+@media only screen and (max-width: 375px) {
+body {
+  background-size: 580px 660px;
+}
 }
