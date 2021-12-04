@@ -12,17 +12,6 @@ const buttonContainer = document.createElement("div");
 
 ///Creating left section inside elements
 
-//creating logo
-
-const img = document.createElement("img");
-siteSection.appendChild(img);
-img.classList.add("logo");
-img.setAttribute(
-  "src",
-  "/src/components/startPage/img/toppng 7.png"
-);
-img.setAttribute("alt", "Game of Thrones logo");
-
 //creating poster
 
 const img2 = document.createElement("img");
@@ -97,3 +86,11 @@ btnStart.innerHTML = "Start";
 containerGame.append(choose, btn1, btn2, btn3, btnStart);
 const link1 = document.createElement("a");
 btn1.append(link1);
+
+//Adding active state to clicked button
+ function changeColor(){
+   this.classList.toggle('active')
+ }
+//  btn1.addEventListener('click', changeColor)
+ const buttons =[btn1,btn2,btn3]
+ buttons.map(button=>button.addEventListener('click',changeColor))
