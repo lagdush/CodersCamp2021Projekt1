@@ -6,3 +6,10 @@
   color: #2c3e50;
   margin-top: 60px;
 }
+body {
+  background-image: url(src/image/bg-image.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center, center;
+  background-attachment: fixed
+}
