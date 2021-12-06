@@ -2,7 +2,7 @@ export const startButton = () => {
   const containerGame = document.createElement("div");
   containerGame.classList.add("container");
   document.body.appendChild(containerGame);
-  const startB = document.createElement("div");
+  const startB = document.createElement("button");
   startB.classList.add("startButton");
   startB.innerText = "Start";
   containerGame.appendChild(startB);
