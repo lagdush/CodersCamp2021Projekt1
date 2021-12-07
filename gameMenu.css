@@ -2,16 +2,17 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "roboto-slab,non-serif";
-  font-size: 1vh;
+  font-size: 10px;
 }
 
 .choose {
   color: #fff;
-  font-size: 8rem;
+  font-size: clamp(3rem, 1.0000rem + 4.0000vw, 13rem);
+  text-align: center;
 }
 
-
 .container {
+  background-color: #494949;
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -23,56 +24,41 @@
   top: 15vh;
 }
 .selection {
+  text-align: center;
   background-color: #494949;
   width: 30.1vw;
   height: 8vh;
   overflow: hidden;
   border-radius: 15px;
   color: #fff;
-  font-size: 6.4rem;
+  transition: opacity 0.2s;
+  font-size: clamp(2rem, 0.4rem + 3.2vw, 10rem);
+  
 }
+
 .startButton {
   background-color: #34a639;
-  box-shadow: 0px 4px 10px 5px #797575c4;
+  box-shadow: 0px 4px 10px 5px #34a639;
   width: 14vw;
   height: 8.9vh;
   overflow: hidden;
   border-radius: 15px;
   color: #fff;
-  font-size: 6.4rem;
-  order:1;
+  font-size: clamp(2rem, 0.4rem + 3.2vw, 10rem);
+  order: 1;
+  width:clamp(80px, 14vw, 14vw);
 }
 button {
-  cursor: pointer;
-  position: relative;
-}
-a {
-  width: 100%;
-  height: 100%;
-}
-
-button:hover{
-  opacity: 0.8;
-}
-
-.settings,
-.info,
-.fame {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0.5vw;
-  margin-top: -6vh;
-  width: 6vw;
-  height: 6vw;
-  background-color: #353537;
-  border-radius: 50%;
   cursor: pointer;
+  position: relative;
+}
+button:hover {
+  opacity: 0.8;
 }
 
-.imgs,
-.imgI,
-.imgF {
-  width: 3.5vw;
-  height: 3.5vw;
+.active {
+  background-color: #34a639;
 }
