@@ -4,10 +4,10 @@ export const createHallOfFame = () => {
     wrapper.classList.add("wrapper");
     const header = document.createElement("div");
     header.classList.add("ranking");
-    const icon = document.createElement("img");
-    icon.setAttribute("src", "../photos/podium.png");
-    const p = document.createElement("p")
-    p.innerText = 'Mode Ranking'
+    const tigerIcon = document.createElement("img");
+    tigerIcon.setAttribute("src", "../photos/podium.png");
+    const rankingHeader = document.createElement("p")
+    rankingHeader.innerText = 'Mode Ranking'
 
     const place = document.createElement("p");
     place.textContent = 'Place';
@@ -23,6 +23,6 @@ export const createHallOfFame = () => {
 
     document.getElementById("app").appendChild(wrapper);
     wrapper.append(header);
-    header.append(icon, p);
+    header.append(tigerIcon, rankingHeader);
 }
 
