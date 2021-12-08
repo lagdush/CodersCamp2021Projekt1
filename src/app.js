@@ -1,9 +1,11 @@
-import { clickLogo } from "./components/logo/logo";
-import { time } from "./components/timer/timer";
+import { createHallOfFame } from "./components/hall_of_fame/hall_of_fame";
+import { createTimer } from "./components/timer/timer";
+import clickLogo from "./components/logo/logo";
 
 const app = () => {
   clickLogo();
-  time();
+  createTimer();
+  createHallOfFame();
 
 };
 

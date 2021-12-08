@@ -1,4 +1,4 @@
-export const clickLogo = () => {
+export default function clickLogo() {     
     const logo = document.createElement("img");
     logo.setAttribute("src", "../photos/logo.png");
     logo.classList.add("logo")

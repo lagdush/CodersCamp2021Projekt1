@@ -1,4 +1,4 @@
-export const time = () => {
+export const createTimer = () => {
 
     const timer = document.createElement("div");
     timer.setAttribute("id", "timer")
@@ -6,6 +6,7 @@ export const time = () => {
 
 
     let timeLeft = 60;
+    let timeFormatChange = 10;
     let downloadTimer = setInterval(() => {
         if (timeLeft <= 0) {
             clearInterval(downloadTimer);
@@ -14,16 +15,9 @@ export const time = () => {
         }
         timeLeft -= 1;
 
-        document.getElementById("timer").innerHTML = prettyPrint(timeLeft);
+        const check = (timeLeft >= timeFormatChange) ? '00' + ':' + timeLeft  : '00' + ':' + '0' + timeLeft;
+        document.getElementById("timer").innerHTML = check;
 
     }, 1000);
 
-    function prettyPrint(timeLeft) {
-        if (timeLeft >= 10) {
-            return '00' + ':' + timeLeft;
-        } else {
-            return '00' + ':' + '0' + timeLeft;
-        }
     }
-
-}
