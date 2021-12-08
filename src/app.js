@@ -1,7 +1,10 @@
-// import { hello } from "./components/testComponent/helloWorld";
+import { clickLogo } from "./components/logo/logo";
+import { time } from "./components/timer/timer";
 
-// const app = () => {
-//   hello();
-// };
+const app = () => {
+  clickLogo();
+  time();
 
-// export default app;
+};
+
+export default app
