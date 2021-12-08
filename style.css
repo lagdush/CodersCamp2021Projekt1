@@ -13,6 +13,11 @@
 
 body {
     display: flex;
+    background-image: url(src/image/bg-image.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center, center;
+    background-attachment: fixed
 }
 
 #app {
@@ -50,7 +55,6 @@ body {
     font-size: 48px;
 
 }
-
 
 /*HALL OF FAME*/
 
