@@ -1,5 +1,4 @@
 //creating game menu
-
 export const menuCreator = () => {
   const choose = document.createElement("div");
   choose.classList.add("choose");
@@ -18,10 +17,12 @@ export const menuCreator = () => {
 
   //Adding active state to clicked button
   const buttons = [btn1, btn2, btn3];
+
   function changeColor() {
     buttons.map((button) => button.classList.remove("active"));
     this.classList.toggle("active");
+    return this.innerHTML;
   }
-  //  btn1.addEventListener('click', changeColor)
+
   buttons.map((button) => button.addEventListener("click", changeColor));
 };

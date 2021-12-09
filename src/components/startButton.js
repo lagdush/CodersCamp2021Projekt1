@@ -1,3 +1,4 @@
+
 export const startButton = () => {
   const containerGame = document.createElement("div");
   containerGame.classList.add("container");
