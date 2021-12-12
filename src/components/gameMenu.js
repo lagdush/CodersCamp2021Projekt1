@@ -14,15 +14,27 @@ export const menuCreator = () => {
   btn3.innerHTML = "Character-family";
   const containerGame = document.querySelector(".container");
   containerGame.append(choose, btn1, btn2, btn3);
-
+};
+export function getCurrentGameMode(passGameMode) {
+  //getting buttons and conv to array
+  const buttonsN = document.getElementsByClassName("selection");
+  const buttons = [...buttonsN];
+  //adding default active state to character-name btn
+  const btnCharName = buttons.find((btn) => {
+    return btn.innerHTML === "Character-name";
+  });
+  btnCharName.classList.add("active");
   //Adding active state to clicked button
-  const buttons = [btn1, btn2, btn3];
-
   function changeColor() {
     buttons.map((button) => button.classList.remove("active"));
     this.classList.toggle("active");
-    return this.innerHTML;
+    const gMode=this.innerHTML
+    function gameMode(){
+      return gMode
+    }
+    function passGameMode(){console.log(gameMode())}
+    passGameMode()
   }
 
   buttons.map((button) => button.addEventListener("click", changeColor));
-};
+}

@@ -1,10 +1,9 @@
 import { startButton } from "./components/startButton";
-import { menuCreator } from "./components/gameMenu";
+import { menuCreator, getCurrentGameMode} from "./components/gameMenu";
 const app = () => {
   startButton();
   menuCreator();
-  
-  
+  getCurrentGameMode();
 };
 
 export default app;
