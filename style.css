@@ -116,25 +116,27 @@ p:nth-child(3) {
  }
  /* GameRules */
 .rules {
+  display: block;
   width: 85%;
   height: 100%;
   background-color: var(--table-color);
   margin:auto;
   border-radius:15px;
+  position:relative;
 }
 .header {
   width:60%;
   height: 100px;
   background-color: var(--timer);
   border-radius:15px;
-  margin: 50px auto;
+  margin: 40px auto;
 }
 h1, h2, p {
   color:var(--font-color);
 }
 h2, p {
   text-align: center;
-  margin: 20px 150px;
+  margin: 15px 150px;
 }
 h1 {
   text-align: center;
@@ -146,35 +148,14 @@ h2 {
 p {
   font-size: 20px;
 }
-.exit {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.button {
+  display: grid;
+  place-items: center;
   width: 100px;
   height: 100px;
   background-color: var(--timer);
   border-radius: 50%;
-  position: absolute;
-  top:80px;
-  left:1270px;
 }
-.circle {
-  width: 80px;
-  height: 80px;
-  border: 1px solid var(--font-color);
-  border-radius: 50%;
-}
-.bar1, .bar2 {
-  width: 35px;
-  height: 1px;
-  background-color: var(--font-color);
-  margin:auto;
-  position:relative;
-  top:37px;
-}
-.bar1 {
-  transform: rotate(45deg);
-}
-.bar2 {
-  transform: rotate(-45deg);
+.button:hover {
+  cursor: pointer;
 }
