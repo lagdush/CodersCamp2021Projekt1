@@ -1,15 +1,14 @@
-import {
-    apiAccess
-} from "./api";
+import { apiAccess } from "./api";
 
+export const randomFourCharactersIds = (availableIds) => {
+  const answersIds = new Set();
+  for (let i = 0; answersIds.size < 4; i++) {
+    answersIds.add(getRandomId(availableIds));
+  }
+  return [...answersIds];
+};
 
-export const randomFourCharacters = () => {
-    const characters = JSON.parse(localStorage.getItem("characters"));
-    const fourCharacters = [];
-    for (let i = 0; i <= 3; i++) {
-        const number = Math.floor(Math.random() * characters.length)
-        fourCharacters.push(characters[number])
-    }
-    return fourCharacters;
-}
-
+const getRandomId = (availableIds) => {
+  const randomIndex = Math.floor(Math.random() * availableIds.length);
+  return availableIds[randomIndex];
+};
