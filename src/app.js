@@ -1,6 +1,8 @@
 import { createHallOfFame } from "./components/hall_of_fame/hall_of_fame";
 import { createTimer } from "./components/timer/timer";
 import clickLogo from "./components/logo/logo";
+import { gameRules } from "./components/gameRules/gameRules";
+import { btn } from "./components/buttonRules/buttonRules";
 import { apiAccess } from "./components/API/api";
 import {
   newQuestion,
@@ -19,6 +21,8 @@ const app = () => {
   newQuestion(PHOTO_MODE, availableIds).then((currentQuestion) =>
     console.log(currentQuestion)
   );
+  // gameRules();
+  // btn();
 };
 
 export default app;

@@ -17,7 +17,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center, center;
-    background-attachment: fixed
+    background-attachment: fixed;
 }
 
 #app {
@@ -114,4 +114,48 @@ p:nth-child(2) {
 p:nth-child(3) {
     grid-area: answear;
  }
- 
+ /* GameRules */
+.rules {
+  display: block;
+  width: 85%;
+  height: 100%;
+  background-color: var(--table-color);
+  margin:auto;
+  border-radius:15px;
+  position:relative;
+}
+.header {
+  width:60%;
+  height: 100px;
+  background-color: var(--timer);
+  border-radius:15px;
+  margin: 40px auto;
+}
+h1, h2, p {
+  color:var(--font-color);
+}
+h2, p {
+  text-align: center;
+  margin: 15px 150px;
+}
+h1 {
+  text-align: center;
+  line-height: 100px;
+}
+h2 {
+  font-size: 30px;
+}
+p {
+  font-size: 20px;
+}
+.button {
+  display: grid;
+  place-items: center;
+  width: 100px;
+  height: 100px;
+  background-color: var(--timer);
+  border-radius: 50%;
+}
+.button:hover {
+  cursor: pointer;
+}
