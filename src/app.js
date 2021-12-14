@@ -1,5 +1,5 @@
 import { startButton } from "./components/startButton";
-import { menuCreator, getCurrentGameMode} from "./components/gameMenu";
+import { menuCreator, getCurrentGameMode } from "./components/gameMenu";
 const app = () => {
   startButton();
   menuCreator();
