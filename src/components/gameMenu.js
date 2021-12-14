@@ -28,11 +28,9 @@ export function getCurrentGameMode(passGameMode) {
   function changeColor() {
     buttons.map((button) => button.classList.remove("active"));
     this.classList.toggle("active");
-// const mode =this.innerHTML
-//    function passGameMode() {
-//       console.log(mode);
-//     }
-    passGameMode();
+    const mode = this.innerHTML;
+
+    passGameMode(mode);
   }
 
   buttons.map((button) => button.addEventListener("click", changeColor));

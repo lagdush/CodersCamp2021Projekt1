@@ -3,7 +3,7 @@ import { menuCreator, getCurrentGameMode } from "./components/gameMenu";
 const app = () => {
   startButton();
   menuCreator();
-  getCurrentGameMode();
+  getCurrentGameMode((mode)=>console.log(mode));
 };
 
 export default app;
