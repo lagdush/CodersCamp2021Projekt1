@@ -17,7 +17,7 @@ export const menuCreator = () => {
 };
 export function getCurrentGameMode(passGameMode) {
   //getting buttons and conv to array
-  const buttonsN = document.getElementsByClassName("selection");
+  const buttonsN = document.querySelectorAll(".selection");
   const buttons = [...buttonsN];
   //adding default active state to character-name btn
   const btnCharName = buttons.find((btn) => {
@@ -28,9 +28,8 @@ export function getCurrentGameMode(passGameMode) {
   function changeColor() {
     buttons.map((button) => button.classList.remove("active"));
     this.classList.toggle("active");
-    const mode = this.innerHTML;
 
-    passGameMode(mode);
+    passGameMode(this.innerHTML);
   }
 
   buttons.map((button) => button.addEventListener("click", changeColor));
