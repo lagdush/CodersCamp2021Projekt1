@@ -1,5 +1,3 @@
-import { apiAccess } from "./api";
-
 export const randomFourCharactersIds = (availableIds) => {
   const answersIds = new Set();
   for (let i = 0; answersIds.size < 4; i++) {

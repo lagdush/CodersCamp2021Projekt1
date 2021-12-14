@@ -1,11 +1,3 @@
-import {
-  newQuestion,
-  Question,
-  PHOTO_MODE,
-  NAME_MODE,
-  FAMILY_NAME_MODE,
-} from "./newQuestion";
-
 export const apiAccess = (data) => {
   const API = "https://thronesapi.com/api/v2/Characters/";
 

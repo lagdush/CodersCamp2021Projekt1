@@ -1,4 +1,3 @@
-import { apiAccess } from "./api";
 import { randomFourCharactersIds } from "./random.js";
 
 export const PHOTO_MODE = "PhotoMode";
