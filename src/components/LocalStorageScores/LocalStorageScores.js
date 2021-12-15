@@ -7,6 +7,23 @@ export class GamePlayer {
   }
 }
 
+const checkScoresInLocalStorage = () => {
+  const GameOfThronesRanking = JSON.parse(
+    localStorage.getItem("GameOfThronesRanking")
+  ) || {
+    photoMode: {
+      scores: [],
+    },
+    nameMode: {
+      scores: [],
+    },
+    familyNameMode: {
+      scores: [],
+    },
+  };
+  return GameOfThronesRanking;
+};
+
 export const storeRankingScores = (mode, player) => {
   const GameOfThronesRanking = checkScoresInLocalStorage();
   let currentMode;
@@ -28,7 +45,7 @@ export const storeRankingScores = (mode, player) => {
   currentMode.push(player);
   currentMode.sort((a, b) => {
     const compareScores = b.score - a.score;
-    if (compareScores != 0) {
+    if (compareScores !== 0) {
       return compareScores;
     }
   });
@@ -40,21 +57,4 @@ export const storeRankingScores = (mode, player) => {
     "GameOfThronesRanking",
     JSON.stringify(GameOfThronesRanking)
   );
-};
-
-const checkScoresInLocalStorage = () => {
-  const GameOfThronesRanking = JSON.parse(
-    localStorage.getItem("GameOfThronesRanking")
-  ) || {
-    photoMode: {
-      scores: [],
-    },
-    nameMode: {
-      scores: [],
-    },
-    familyNameMode: {
-      scores: [],
-    },
-  };
-  return GameOfThronesRanking;
 };
