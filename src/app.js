@@ -10,6 +10,10 @@ import {
   NAME_MODE,
   FAMILY_NAME_MODE,
 } from "./components/API/newQuestion";
+import {
+  storeRankingScores,
+  GamePlayer,
+} from "./components/LocalStorageScores/LocalStorageScores";
 
 let availableIds;
 await apiAccess().then((ids) => (availableIds = ids));
@@ -23,6 +27,8 @@ const app = () => {
   );
   // gameRules();
   // btn();
+  let player = new GamePlayer("Ewelina Mężyk", 20);
+  storeRankingScores(FAMILY_NAME_MODE, player);
 };
 
 export default app;
