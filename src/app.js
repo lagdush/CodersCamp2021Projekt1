@@ -38,7 +38,7 @@ const app = () => {
   // btn();
   let player = new GamePlayer("Ewelina Mężyk", 20);
   storeRankingScores(FAMILY_NAME_MODE, player);
-  homePagePoster();
+  // homePagePoster();
   changePosterByMode();
 };
 

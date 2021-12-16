@@ -1,3 +1,20 @@
+import {
+  PHOTO_MODE,
+  NAME_MODE,
+  FAMILY_NAME_MODE,
+} from "../components/API/newQuestion";
+
+const mapToMode = (innerHtml) => {
+  switch (innerHtml) {
+    case "Character-name":
+      return PHOTO_MODE;
+    case "Name-character":
+      return NAME_MODE;
+    case "Character-family":
+      return FAMILY_NAME_MODE;
+  }
+};
+
 //creating game menu
 export const menuCreator = () => {
   const choose = document.createElement("div");
@@ -29,7 +46,7 @@ export function getCurrentGameMode(passGameMode) {
     buttons.map((button) => button.classList.remove("active"));
     this.classList.toggle("active");
 
-    passGameMode(this.innerHTML);
+    passGameMode(mapToMode(this.innerHTML));
   }
 
   buttons.map((button) => button.addEventListener("click", changeColor));
