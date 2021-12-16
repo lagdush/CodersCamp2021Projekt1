@@ -1,9 +1,5 @@
 import { startButton } from "./components/startButton";
 import { menuCreator, getCurrentGameMode } from "./components/gameMenu";
-const app = () => {
-  startButton();
-  menuCreator();
-  getCurrentGameMode((mode)=>console.log(mode));
 import { createHallOfFame } from "./components/hall_of_fame/hall_of_fame";
 import { createTimer } from "./components/timer/timer";
 import clickLogo from "./components/logo/logo";
@@ -25,6 +21,9 @@ let availableIds;
 await apiAccess().then((ids) => (availableIds = ids));
 
 const app = () => {
+  startButton();
+  menuCreator();
+  getCurrentGameMode((mode) => console.log(mode));
   clickLogo();
   createTimer();
   createHallOfFame();
