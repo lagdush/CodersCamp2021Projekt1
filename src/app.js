@@ -1,9 +1,5 @@
 import { startButton } from "./components/startButton";
 import { menuCreator, getCurrentGameMode } from "./components/gameMenu";
-const app = () => {
-  startButton();
-  menuCreator();
-  getCurrentGameMode((mode)=>console.log(mode));
 import { createHallOfFame } from "./components/hall_of_fame/hall_of_fame";
 import { createTimer } from "./components/timer/timer";
 import clickLogo from "./components/logo/logo";
@@ -20,21 +16,30 @@ import {
   storeRankingScores,
   GamePlayer,
 } from "./components/LocalStorageScores/LocalStorageScores";
+import {
+  homePagePoster,
+  changePosterByMode,
+} from "./components/Homepage_image/Homepage_image";
 
 let availableIds;
 await apiAccess().then((ids) => (availableIds = ids));
 
 const app = () => {
   clickLogo();
-  createTimer();
-  createHallOfFame();
+  // createTimer();
+  // createHallOfFame();
   newQuestion(PHOTO_MODE, availableIds).then((currentQuestion) =>
     console.log(currentQuestion)
   );
+  startButton();
+  menuCreator();
+  getCurrentGameMode((mode) => console.log(mode));
   // gameRules();
   // btn();
   let player = new GamePlayer("Ewelina Mężyk", 20);
   storeRankingScores(FAMILY_NAME_MODE, player);
+  homePagePoster();
+  changePosterByMode();
 };
 
 export default app;
