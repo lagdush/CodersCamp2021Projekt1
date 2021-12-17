@@ -3,6 +3,7 @@ import { menuCreator, getCurrentGameMode } from "./components/gameMenu";
 import { createHallOfFame } from "./components/hall_of_fame/hall_of_fame";
 import { createTimer } from "./components/timer/timer";
 import clickLogo from "./components/logo/logo";
+import { modalWindow } from "./components/modal_window/modalWindow";
 import { gameRules } from "./components/gameRules/gameRules";
 import { btn } from "./components/buttonRules/buttonRules";
 import { apiAccess } from "./components/API/api";
@@ -26,6 +27,8 @@ const app = () => {
   getCurrentGameMode((mode) => console.log(mode));
   clickLogo();
   createTimer();
+  btn();
+  modalWindow();
   createHallOfFame();
   newQuestion(PHOTO_MODE, availableIds).then((currentQuestion) =>
     console.log(currentQuestion)

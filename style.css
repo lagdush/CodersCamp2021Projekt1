@@ -114,6 +114,52 @@ p:nth-child(2) {
 p:nth-child(3) {
     grid-area: answear;
  }
+
+/* MODAL WINDOW */
+
+.modal-window {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #494949;
+  border-radius: 15px;
+  width: 80%;
+  height: 90%;
+  z-index: 2;
+  /* display: none; */
+  }
+  
+  .btn {
+  width: 60px;
+  height: 60px;
+  font-size: 4rem;
+  display: block;
+  margin-left: auto;
+  margin-right: 20px;
+  margin-top: 20px;
+  background-color: #353537;
+  border: 2px solid white;
+  outline: 8px solid #353537;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  }
+  
+  .btn:hover {
+  background-color: #8f8f94;
+  outline: 8px solid #8f8f94;
+  }
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  background-color: #242425;
+  filter: blur(13px);
+  opacity: 0.7;
+}
+
  /* GameRules */
 .rules {
   display: block;
