@@ -12,6 +12,8 @@ const mapToMode = (innerHtml) => {
       return NAME_MODE;
     case "Character-family":
       return FAMILY_NAME_MODE;
+    default:
+      console.log(`no mode`);
   }
 };
 
