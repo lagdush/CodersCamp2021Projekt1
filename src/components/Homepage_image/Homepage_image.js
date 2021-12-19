@@ -24,7 +24,7 @@ const switchPhotoMode = () => {
         poster.src = "../photos/got_module3_photo.jpg";
         break;
       default:
-        console.log(`no mode`);
+        throw new Error("Unknown game mode");
     }
   });
 };

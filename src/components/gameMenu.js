@@ -13,7 +13,7 @@ const mapToMode = (innerHtml) => {
     case "Character-family":
       return FAMILY_NAME_MODE;
     default:
-      console.log(`no mode`);
+      throw new Error("Unknown game mode");
   }
 };
 
