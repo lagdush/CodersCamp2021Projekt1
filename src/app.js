@@ -25,6 +25,9 @@ let availableIds;
 await apiAccess().then((ids) => (availableIds = ids));
 
 const app = () => {
+  startButton();
+  menuCreator();
+  getCurrentGameMode();
   clickLogo();
   // createTimer();
   // createHallOfFame();
