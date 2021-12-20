@@ -44,11 +44,11 @@ export function getCurrentGameMode(passGameMode) {
   });
   btnCharName.classList.add("active");
   //Adding active state to clicked button
-  function changeColor() {
+  function changeColor(e) {
     buttons.map((button) => button.classList.remove("active"));
-    this.classList.toggle("active");
+    e.currentTarget.classList.toggle("active");
 
-    passGameMode(mapToMode(this.innerHTML));
+    passGameMode(e.currentTarget.innerHTML);
   }
 
   buttons.map((button) => button.addEventListener("click", changeColor));
