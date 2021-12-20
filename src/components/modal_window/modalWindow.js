@@ -1,4 +1,4 @@
-export const modalWindow = () => {
+export const modalWindow = (component) => {
     
     const overlay = document.createElement("div");
     overlay.classList.add("overlay");
@@ -13,10 +13,12 @@ export const modalWindow = () => {
     btn.innerHTML = "&times;"
     modal.appendChild(btn);
     
+    
     const closeModal = () => {
         modal.style.display = "none";
         overlay.style.display = "none"
     }
-    
+
+    modal.appendChild(component());
     btn.addEventListener("click", closeModal);
 }
