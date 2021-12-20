@@ -20,7 +20,6 @@ import {
   homePagePoster,
   changePosterByMode,
 } from "./components/Homepage_image/Homepage_image";
-
 let availableIds;
 await apiAccess().then((ids) => (availableIds = ids));
 
