@@ -9,7 +9,7 @@ class QuestionWrapper {
 
 export class HumanPlayer {
   constructor(playerName) {
-    this.playerName = playerName;
+    this.playerName = "";
     this.questionWrappers = [];
     this.currentQuestion = null;
   }
@@ -21,7 +21,7 @@ export class HumanPlayer {
   countCorrectAnswers() {
     return this.questionWrappers.filter((wrapper) => {
       return (
-        wrapper.choosenCharacter.id == wrapper.question.correctCharacter.id
+        wrapper.choosenCharacter.id === wrapper.question.correctCharacter.id
       );
     }).length;
   }
@@ -41,6 +41,6 @@ export class HumanPlayer {
   }
 }
 
-export function createPlayer(name) {
-  return new HumanPlayer(name);
+export function createPlayer() {
+  return new HumanPlayer();
 }

@@ -19,11 +19,10 @@ const app = () => {
   homePagePoster();
   changePosterByMode();
 
-  const name = "Ewelina";
   const currentQuestionPromise = newQuestion(FAMILY_NAME_MODE, [1, 2, 3, 4]);
   currentQuestionPromise
     .then((currentQuestion) => {
-      const player = createPlayer(name);
+      const player = createPlayer();
 
       player.askQuestion(currentQuestion, () => console.log("question asked!"));
 
