@@ -1,4 +1,19 @@
-//creating game menu
+import { PHOTO_MODE, NAME_MODE, FAMILY_NAME_MODE } from "./API/newQuestion";
+
+const mapToMode = (innerHtml) => {
+  switch (innerHtml) {
+    case "Character-name":
+      return PHOTO_MODE;
+    case "Name-character":
+      return NAME_MODE;
+    case "Character-family":
+      return FAMILY_NAME_MODE;
+    default:
+      throw new Error("Unknown game mode");
+  }
+};
+
+// creating game menu
 export const menuCreator = () => {
   const choose = document.createElement("div");
   choose.classList.add("choose");
@@ -16,20 +31,19 @@ export const menuCreator = () => {
   containerGame.append(choose, btn1, btn2, btn3);
 };
 export function getCurrentGameMode(passGameMode) {
-  //getting buttons and conv to array
+  // getting buttons and conv to array
   const buttonsN = document.querySelectorAll(".selection");
   const buttons = [...buttonsN];
-  //adding default active state to character-name btn
+  // adding default active state to character-name btn
   const btnCharName = buttons.find((btn) => {
     return btn.innerHTML === "Character-name";
   });
   btnCharName.classList.add("active");
-  //Adding active state to clicked button
-  function changeColor() {
+  // Adding active state to clicked button
+  function changeColor(e) {
     buttons.map((button) => button.classList.remove("active"));
-    this.classList.toggle("active");
-
-    passGameMode(this.innerHTML);
+    e.currentTarget.classList.toggle("active");
+    passGameMode(mapToMode(e.currentTarget.innerHTML));
   }
 
   buttons.map((button) => button.addEventListener("click", changeColor));
