@@ -19,6 +19,9 @@ const mapToMode = (innerHtml) => {
 
 //creating game menu
 export const menuCreator = () => {
+  const container = document.createElement("div");
+  container.classList.add("container");
+  document.body.appendChild(container);
   const choose = document.createElement("div");
   choose.classList.add("choose");
   choose.innerHTML = "Choose your quiz";
@@ -34,6 +37,7 @@ export const menuCreator = () => {
   const containerGame = document.querySelector(".container");
   containerGame.append(choose, btn1, btn2, btn3);
 };
+// };
 export function getCurrentGameMode(passGameMode) {
   //getting buttons and conv to array
   const buttonsN = document.querySelectorAll(".selection");

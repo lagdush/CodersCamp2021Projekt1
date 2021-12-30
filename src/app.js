@@ -20,6 +20,8 @@ import {
   homePagePoster,
   changePosterByMode,
 } from "./components/Homepage_image/Homepage_image";
+import { menuView } from "./components/MainMenu/MainMenu";
+import { btnHallOfFame } from "./components/buttonHallOfFame/buttonHallOfFame";
 
 let availableIds;
 await apiAccess().then((ids) => (availableIds = ids));
@@ -35,12 +37,13 @@ const app = () => {
     console.log(currentQuestion)
   );
   getCurrentGameMode((mode) => console.log(mode));
-  // gameRules();
   btn();
+  btnHallOfFame();
   let player = new GamePlayer("Ewelina Mężyk", 20);
   storeRankingScores(FAMILY_NAME_MODE, player);
   // homePagePoster();
   changePosterByMode();
+  menuView();
 };
 
 export default app;

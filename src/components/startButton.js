@@ -1,12 +1,8 @@
-
 export const startButton = () => {
-  const containerGame = document.createElement("div");
-  containerGame.classList.add("container");
-  document.body.appendChild(containerGame);
   const startB = document.createElement("button");
   startB.classList.add("startButton");
   startB.innerText = "Start";
-  containerGame.appendChild(startB);
+  document.body.appendChild(startB);
   startB.style.textAlign = "center";
   startB.style.textTransform = "uppercase";
 };

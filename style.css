@@ -57,7 +57,9 @@ body {
 
 .wrapper {
   display: grid;
-  /* position: relative; */
+
+  z-index: 1;
+  position: absolute;
   grid-template-columns: 40px 1fr 2fr 1fr;
   grid-template-rows: repeat(7, 1fr);
   grid-template-areas:
@@ -65,8 +67,8 @@ body {
     ". place player answear";
   width: 60.5vw;
   height: 47vh;
-  right: 5vw;
-  top: 30vh;
+  right: 3vw;
+  top: 35vh;
   padding: 20px 28px;
   background-color: var(--table-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -74,7 +76,9 @@ body {
 }
 
 .ranking {
+  max-width: 100%;
   display: flex;
+  /* flex-wrap: wrap; */
   grid-area: header;
   text-align: center;
   justify-content: center;
@@ -108,6 +112,7 @@ p:nth-child(3) {
 }
 /* GameRules */
 .rules {
+  z-index: 1;
   display: block;
   width: 85%;
   height: 100%;
@@ -115,6 +120,9 @@ p:nth-child(3) {
   margin: auto;
   border-radius: 15px;
   position: relative;
+}
+.rules h1 {
+  font-size: clamp(1.8rem, 2.5vw, 5rem);
 }
 .header {
   width: 60%;
@@ -144,10 +152,10 @@ p {
   font-size: 20px;
 }
 
-.gameRulesButton {
+.showButton {
   position: absolute;
   bottom: 2vh;
-  left: 14vw;
+  left: 10vw;
   width: 6vw;
   height: 12vh;
   display: grid;
@@ -156,12 +164,20 @@ p {
   border-radius: 50%;
 }
 
-.gameRulesButton:hover {
+.showButton:hover {
   cursor: pointer;
 }
 
+#HallOfFame {
+  left: 18vw;
+  width: 6vw;
+}
 .quest-mark {
   width: 2vw;
+  height: 5.5vh;
+}
+.hof-mark {
+  width: 2.8vw;
   height: 5.5vh;
 }
 

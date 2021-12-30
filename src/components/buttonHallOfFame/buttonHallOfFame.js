@@ -1,11 +1,11 @@
-export const btn = () => {
+export const btnHallOfFame = () => {
   const button = document.createElement("div");
   button.classList.add("showButton");
-  button.setAttribute("id", "gameRulesButton");
+  button.setAttribute("id", "HallOfFame");
   document.getElementById("app").appendChild(button);
 
   const pic = document.createElement("img");
-  pic.classList.add("quest-mark");
-  pic.setAttribute("src", "src/image/question_mark.png");
+  pic.classList.add("hof-mark");
+  pic.setAttribute("src", "src/image/HallOfFame_mark.png");
   button.appendChild(pic);
 };
