@@ -3,7 +3,10 @@ import { PHOTO_MODE, NAME_MODE, FAMILY_NAME_MODE } from "../API/newQuestion";
 
 export const homePagePoster = () => {
   const poster = document.createElement("img");
-  poster.setAttribute("src", "../../../../src/image/got_module1_photo.png");
+  poster.setAttribute(
+    "src",
+    "../../../../codersCamp2021Project1/src/image/got_module1_photo.png"
+  );
   poster.classList.add("poster");
   poster.setAttribute("id", "poster");
   document.getElementById("app").appendChild(poster);
