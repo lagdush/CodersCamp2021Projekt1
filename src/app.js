@@ -31,10 +31,10 @@ const app = () => {
       );
 
       const answersCount = player.countAnswers();
-      console.log("Total answers: " + answersCount);
+      console.log(`Total answers: ${answersCount}`);
 
       const correctAnswersCOunt = player.countCorrectAnswers();
-      console.log("Correct answers: " + correctAnswersCOunt);
+      console.log(`Correct answers: ${correctAnswersCOunt}`);
     })
     .catch((e) => console.log(e));
 };
