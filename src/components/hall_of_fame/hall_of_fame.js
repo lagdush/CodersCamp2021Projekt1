@@ -4,7 +4,7 @@ export const createHallOfFame = () => {
   const header = document.createElement("div");
   header.classList.add("ranking");
   const tigerIcon = document.createElement("img");
-  tigerIcon.setAttribute("src", "../photos/podium.png");
+  tigerIcon.setAttribute("src", "../../image/podium.png");
   const rankingHeader = document.createElement("p");
   rankingHeader.innerText = "Mode Ranking";
 

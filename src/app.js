@@ -1,5 +1,5 @@
 import { startButton } from "./components/startButton";
-import { menuCreator, getCurrentGameMode } from "./components/gameMenu";
+import { menuCreator } from "./components/gameMenu";
 import clickLogo from "./components/logo/logo";
 import {
   homePagePoster,
@@ -14,7 +14,6 @@ import { FAMILY_NAME_MODE, newQuestion } from "./components/API/newQuestion";
 const app = () => {
   startButton();
   menuCreator();
-  getCurrentGameMode();
   clickLogo();
   homePagePoster();
   changePosterByMode();
