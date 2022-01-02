@@ -7,6 +7,6 @@ export const btn = () => {
   document.getElementById("app").appendChild(button);
   const pic = document.createElement("img");
   pic.classList.add("quest-mark");
-  pic.setAttribute("src", "src/image/question_mark.png");
+  pic.setAttribute("src", "/assets/question_mark.png");
   button.appendChild(pic);
 };
