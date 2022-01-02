@@ -11,19 +11,19 @@
 }
 
 body {
-  display: flex;
+  /* display: flex; */
   background-image: url(src/image/bg-image.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center, center;
-  background-attachment: fixed;
+  /* background-attachment: fixed; */
 }
 
 #app {
-  display: flex;
+  /* display: flex; */
   height: 100vh;
   width: 100vw;
-  padding: 63px 32px;
+  /* padding: 63px 32px; */
 }
 
 /*LOGO*/
@@ -34,10 +34,10 @@ body {
 
 .logo {
   position: absolute;
-  width: 28vw;
-  height: 25vh;
-  left: 3vw;
-  top: 3vh;
+  width: 520px;
+  /* height: 254px; */
+  /* left: 3vw;
+  top: 3vh; */
 
   /* width: 27vw;
 	height: 23.5vh; */
@@ -62,13 +62,13 @@ body {
   display: grid;
   z-index: 1;
   position: absolute;
-  grid-template-columns: 40px 1fr 2fr 1fr;
-  grid-template-rows: repeat(7, 1fr);
-  grid-template-areas:
+  grid-template-columns: repeat(3, 1fr);
+  /* grid-template-rows: repeat(5, 1fr); */
+  /* grid-template-areas:
     "header header header header"
-    ". place player answear";
-  width: 60.5vw;
+    ". place player player"; */
   height: 47vh;
+  width: 60vw;
   right: 3vw;
   top: 35vh;
   padding: 20px 28px;
@@ -88,28 +88,28 @@ body {
 .ranking p {
   color: var(--font-color);
   padding: 20px;
-  font-size: clamp(1.5rem, 2.2vw, 3rem);
+  font-size: 2.25rem;
   font-family: arial, sans-serif;
   text-transform: capitalize;
 }
 
 .wrapper > p {
-  font-size: clamp(1.25rem, 1.86vw, 3rem);
+  font-size: 1.25rem;
   color: var(--font-color);
   text-align: left;
 }
 
-p:nth-child(1) {
+/* p:nth-child(1) {
   grid-area: place;
 }
 
 p:nth-child(2) {
   grid-area: player;
-}
+} */
 
-p:nth-child(3) {
+/* p:nth-child(3) {
   grid-area: answear;
-}
+} */
 
 /* MODAL WINDOW */
 
