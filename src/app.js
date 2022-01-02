@@ -28,38 +28,38 @@
 // let availableIds;
 // await apiAccess().then((ids) => (availableIds = ids));
 
-const app = () => {
-  // startButton();
-  // menuCreator();
-  // getCurrentGameMode();
-  // clickLogo();
-  // // createTimer();
-  // // createHallOfFame();
-  // newQuestion(PHOTO_MODE, availableIds).then((currentQuestion) =>
-  //   console.log(currentQuestion)
-  // );
-  // getCurrentGameMode((mode) => console.log(mode));
-  // btn();
-  // btnHallOfFame();
-  // const player = new GamePlayer("Ewelina Mężyk", 20);
-  // storeRankingScores(FAMILY_NAME_MODE, player);
-  // homePagePoster();
-  // // changePosterByMode();
-  // menuView();
-  // const currentQuestionPromise = newQuestion(FAMILY_NAME_MODE, [1, 2, 3, 4]);
-  // currentQuestionPromise
-  //   .then((currentQuestion) => {
-  //     const player = createPlayer();
-  //     player.askQuestion(currentQuestion, () => console.log("question asked!"));
-  //     player.answer(currentQuestion.charactersToChoseFrom[0], () =>
-  //       console.log("player has answered!")
-  //     );
-  //     const answersCount = player.countAnswers();
-  //     console.log(`Total answers: ${answersCount}`);
-  //     const correctAnswersCOunt = player.countCorrectAnswers();
-  //     console.log(`Correct answers: ${correctAnswersCOunt}`);
-  //   })
-  //   .catch((e) => console.log(e));
-};
+// const app = () => {
+//   startButton();
+//   menuCreator();
+//   getCurrentGameMode();
+//   clickLogo();
+//   // createTimer();
+//   // createHallOfFame();
+//   newQuestion(PHOTO_MODE, availableIds).then((currentQuestion) =>
+//     console.log(currentQuestion)
+//   );
+//   getCurrentGameMode((mode) => console.log(mode));
+//   btn();
+//   btnHallOfFame();
+//   const player = new GamePlayer("Ewelina Mężyk", 20);
+//   storeRankingScores(FAMILY_NAME_MODE, player);
+//   homePagePoster();
+//   // changePosterByMode();
+//   menuView();
+//   const currentQuestionPromise = newQuestion(FAMILY_NAME_MODE, [1, 2, 3, 4]);
+//   currentQuestionPromise
+//     .then((currentQuestion) => {
+//       const player = createPlayer();
+//       player.askQuestion(currentQuestion, () => console.log("question asked!"));
+//       player.answer(currentQuestion.charactersToChoseFrom[0], () =>
+//         console.log("player has answered!")
+//       );
+//       const answersCount = player.countAnswers();
+//       console.log(`Total answers: ${answersCount}`);
+//       const correctAnswersCOunt = player.countCorrectAnswers();
+//       console.log(`Correct answers: ${correctAnswersCOunt}`);
+//     })
+//     .catch((e) => console.log(e));
+// };
 
-export default app;
+// export default app;

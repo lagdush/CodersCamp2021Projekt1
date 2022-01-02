@@ -1,6 +1,3 @@
-// /* eslint-disable no-restricted-syntax */
-// import { checkScoresInLocalStorage } from "../LocalStorageScores/LocalStorageScores";
-
 // export const createHallOfFame = () => {
 //   const ls = checkScoresInLocalStorage();
 //   console.log(ls.familyNameMode.scores);
