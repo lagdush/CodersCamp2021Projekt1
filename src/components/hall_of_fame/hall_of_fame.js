@@ -1,6 +1,7 @@
 export const createHallOfFame = () => {
   const wrapper = document.createElement("div");
   wrapper.classList.add("wrapper");
+  wrapper.setAttribute("id", "hof");
   const header = document.createElement("div");
   header.classList.add("ranking");
   const tigerIcon = document.createElement("img");

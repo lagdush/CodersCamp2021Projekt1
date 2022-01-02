@@ -1,4 +1,4 @@
-import { startButton } from "./components/startButton";
+import { StartQuiz } from "./components/StartQuiz";
 import { menuCreator, getCurrentGameMode } from "./components/gameMenu";
 import {
   GamePlayer,
@@ -28,7 +28,7 @@ import { menuView } from "./components/MainMenu/MainMenu";
 import { btnHallOfFame } from "./components/buttonHallOfFame/buttonHallOfFame";
 
 const app = () => {
-  startButton();
+  StartQuiz();
   menuCreator();
   getCurrentGameMode();
   clickLogo();

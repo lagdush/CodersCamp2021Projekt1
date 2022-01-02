@@ -1,4 +1,4 @@
-export const startButton = () => {
+export const StartQuiz = () => {
   const startB = document.createElement("button");
   startB.classList.add("startButton");
   startB.innerText = "Start";

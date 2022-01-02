@@ -13,9 +13,14 @@ export const modalWindow = (component) => {
   modal.appendChild(btn);
 
   const closeModal = () => {
-    modal.style.display = "none";
-    overlay.style.display = "none";
-    document.getElementById("rules").style.display = "none";
+    modal.remove();
+    overlay.remove();
+    if (document.getElementById("rules")) {
+      document.getElementById("rules").remove();
+    }
+    if (document.getElementById("hof")) {
+      document.getElementById("hof").remove();
+    }
   };
 
   btn.addEventListener("click", closeModal);
