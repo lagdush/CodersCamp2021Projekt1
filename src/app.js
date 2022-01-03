@@ -11,12 +11,11 @@ import {
   changePosterByMode,
 } from "./components/Homepage_image/Homepage_image";
 import { apiAccess } from "./components/API/api";
-let availableIds;
-await apiAccess().then((ids) => (availableIds = ids));
 import {
   HumanPlayer,
   createPlayer,
 } from "./components/LogicHumanPlayer/LogicHumanPlayer";
+
 import {
   FAMILY_NAME_MODE,
   newQuestion,
@@ -28,6 +27,21 @@ import { btn } from "./components/buttonRules/buttonRules";
 import { menuView } from "./components/MainMenu/MainMenu";
 import { btnHallOfFame } from "./components/buttonHallOfFame/buttonHallOfFame";
 
+import { quizPage } from "./components/answerQuestions/answerQuestions";
+
+let availableIds;
+await apiAccess().then((ids) => (availableIds = ids));
+
+export const presentQuestion = (question) => {
+  document
+    .querySelector("#startButton")
+    .addEventListener("click", quizPage(question));
+
+  //src= question.correctCharacter.imageUrl
+
+  //charactersToChooseFrom.fullName
+};
+
 const app = () => {
   StartQuiz();
   menuCreator();
@@ -37,18 +51,22 @@ const app = () => {
   newQuestion(PHOTO_MODE, availableIds).then((currentQuestion) =>
     console.log(currentQuestion)
   );
+  // createTimer();
+  // createHallOfFame();
   getCurrentGameMode((mode) => console.log(mode));
   btn();
   btnHallOfFame();
   let player = new GamePlayer("Ewelina Mężyk", 20);
   storeRankingScores(FAMILY_NAME_MODE, player);
-  homePagePoster();
   changePosterByMode();
   menuView();
-
+  // startNewQuiz();
   const currentQuestionPromise = newQuestion(FAMILY_NAME_MODE, [1, 2, 3, 4]);
   currentQuestionPromise
     .then((currentQuestion) => {
+      //:tu
+      presentQuestion(currentQuestion);
+
       const player = createPlayer();
 
       player.askQuestion(currentQuestion, () => console.log("question asked!"));
