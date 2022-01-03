@@ -1,3 +1,4 @@
+/* eslint-disable consistent-return */
 import { PHOTO_MODE, NAME_MODE, FAMILY_NAME_MODE } from "../API/newQuestion";
 
 export class GamePlayer {
@@ -7,7 +8,7 @@ export class GamePlayer {
   }
 }
 
-const checkScoresInLocalStorage = () => {
+export const checkScoresInLocalStorage = () => {
   const GameOfThronesRanking = JSON.parse(
     localStorage.getItem("GameOfThronesRanking")
   ) || {
@@ -39,10 +40,12 @@ export const storeRankingScores = (mode, player) => {
       currentMode = GameOfThronesRanking.familyNameMode.scores;
       break;
     default:
+      // eslint-disable-next-line no-console
       console.log(`error`);
   }
 
   currentMode.push(player);
+  // eslint-disable-next-line array-callback-return
   currentMode.sort((a, b) => {
     const compareScores = b.score - a.score;
     if (compareScores !== 0) {
