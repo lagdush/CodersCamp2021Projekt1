@@ -206,3 +206,95 @@ p {
 	bottom: 10vh;
 	left: 3vw;
 }
+
+.gameOverWindow {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #494949;
+	border-radius: 15px;
+	width: 80%;
+	height: 90%;
+	z-index: 2;
+}
+
+.headerofGameOver {
+	width: 100%;
+}
+
+.headerofGameOver h1 {
+	font-size: 3.5rem;
+	line-height: 60px;
+}
+
+.headerofGameOver p {
+	font-size: 2.3rem;
+}
+
+.textCorrect {
+	font-weight: bold;
+	color: #34A639;
+}
+
+.results { 
+	/* border: 1px solid red; */
+    width: 90%;
+    height: 50vh;
+    margin: 7em auto auto auto;
+}
+.resultHeader {
+	display: grid;
+	height: 10%;
+	grid-template-columns: 1fr .7fr .7fr 1fr;
+	font-size: 1.25em;
+}
+
+.resultHeader span {
+	color: white;
+	font-size: 2rem;
+	text-align: center;
+}
+
+.resultBody {
+	display: grid;
+	grid-template-columns: 1fr .7fr .7fr 1fr;
+	/* background-color: #112788; */
+	height: 90%;
+}
+
+.inputField {
+	margin: auto;
+    color: white;
+    text-align: center;
+}
+
+.labelForInput {
+	font-size: 2rem;
+}
+
+.player-input {
+    margin: 2em auto;
+}
+
+.player-input[type="text"] {
+    font-size: .8em;
+	border: none;
+	background-color: #C4C4C4;
+	padding: 8px 13px;
+	width: 80%;
+}
+.submitButton { 
+    background-color: #34A639;
+	border: none;
+    font-size: 2em;
+    color: white;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 0.5em;
+}
+
+.submitButton:hover {
+	background-color: #39883d;
+	cursor: pointer;
+}
