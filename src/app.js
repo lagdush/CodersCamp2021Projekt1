@@ -36,10 +36,6 @@ export const presentQuestion = (question) => {
   document
     .querySelector("#startButton")
     .addEventListener("click", quizPage(question));
-
-  //src= question.correctCharacter.imageUrl
-
-  //charactersToChooseFrom.fullName
 };
 
 const app = () => {
@@ -61,27 +57,33 @@ const app = () => {
   changePosterByMode();
   menuView();
   // startNewQuiz();
-  const currentQuestionPromise = newQuestion(FAMILY_NAME_MODE, [1, 2, 3, 4]);
-  currentQuestionPromise
-    .then((currentQuestion) => {
-      //:tu
-      presentQuestion(currentQuestion);
+  const createPromise = () => {
+    const currentQuestionPromise = newQuestion(FAMILY_NAME_MODE, [1, 2, 3, 4]);
+    currentQuestionPromise
+      .then((currentQuestion) => {
+        presentQuestion(currentQuestion);
 
-      const player = createPlayer();
+        const player = createPlayer();
 
-      player.askQuestion(currentQuestion, () => console.log("question asked!"));
+        player.askQuestion(currentQuestion, () =>
+          console.log("question asked!")
+        );
 
-      player.answer(currentQuestion.charactersToChoseFrom[0], () =>
-        console.log("player has answered!")
-      );
+        player.answer(currentQuestion.charactersToChoseFrom[0], () =>
+          console.log("player has answered!")
+        );
 
-      const answersCount = player.countAnswers();
-      console.log(`Total answers: ${answersCount}`);
+        const answersCount = player.countAnswers();
+        console.log(`Total answers: ${answersCount}`);
 
-      const correctAnswersCOunt = player.countCorrectAnswers();
-      console.log(`Correct answers: ${correctAnswersCOunt}`);
-    })
-    .catch((e) => console.log(e));
+        const correctAnswersCOunt = player.countCorrectAnswers();
+        console.log(`Correct answers: ${correctAnswersCOunt}`);
+      })
+      .catch((e) => console.log(e));
+  };
+  document
+    .querySelector("#startButton")
+    .addEventListener("click", createPromise);
 };
 
 export default app;
