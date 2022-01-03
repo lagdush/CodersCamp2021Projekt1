@@ -16,8 +16,8 @@ const mapToMode = (innerHtml) => {
 // creating game menu
 export const menuCreator = () => {
   const container = document.createElement("div");
-  container.classList.add("container");
-  document.body.appendChild(container);
+  container.classList.add("menu");
+
   const choose = document.createElement("div");
   choose.classList.add("choose");
   choose.innerHTML = "Choose your quiz";
@@ -30,8 +30,8 @@ export const menuCreator = () => {
   const btn3 = document.createElement("button");
   btn3.classList.add("selection");
   btn3.innerHTML = "Character-family";
-  const containerGame = document.querySelector(".container");
-  containerGame.append(choose, btn1, btn2, btn3);
+  container.append(choose, btn1, btn2, btn3);
+  return container;
 };
 export function getCurrentGameMode(passGameMode) {
   // getting buttons and conv to array

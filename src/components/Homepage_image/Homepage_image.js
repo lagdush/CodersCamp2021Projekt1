@@ -7,12 +7,11 @@ export const homePagePoster = () => {
   poster.setAttribute("src", src);
   poster.classList.add("poster");
   poster.setAttribute("id", "poster");
-  document.getElementById("app").appendChild(poster);
   return poster;
 };
 
 const switchPhotoMode = () => {
-  const poster = homePagePoster();
+  const poster = document.getElementById("poster");
   getCurrentGameMode((mode) => {
     switch (mode) {
       case PHOTO_MODE:

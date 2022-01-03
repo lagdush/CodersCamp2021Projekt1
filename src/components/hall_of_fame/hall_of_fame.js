@@ -1,34 +1,42 @@
-// export const createHallOfFame = () => {
-//   const ls = checkScoresInLocalStorage();
-//   console.log(ls.familyNameMode.scores);
-//   const list = document.createElement("ol");
-//   const listItem = document.createElement("li");
-//   const wrapper = document.createElement("div");
-//   wrapper.classList.add("wrapper");
-//   const header = document.createElement("div");
-//   header.classList.add("ranking");
-//   const tigerIcon = document.createElement("img");
-//   tigerIcon.setAttribute("src", "../photos/podium.png");
-//   const rankingHeader = document.createElement("p");
-//   rankingHeader.innerText = "Mode Ranking";
+import { checkScoresInLocalStorage } from "../LocalStorageScores/LocalStorageScores";
 
-//   const place = document.createElement("p");
-//   place.textContent = "Score";
-//   wrapper.append(place);
+export const createHallOfFame = () => {
+  const ranking = checkScoresInLocalStorage();
+  const rankingArray = ranking.familyNameMode.scores;
+  const hallOfFame = document.createElement("div");
+  hallOfFame.classList.add("hall-of-fame-wrapper");
+  hallOfFame.innerHTML = `
+  <div class="ranking-header">
+  <img src="./assets/podium.png" alt=""/>
+  <h2>Ranking</h2>
+  </div>
+  <div class="ranking-content">
+        <ul class="ranking-flex">
+            <li class="bold">Place</li>
+            <li>1st</li>
+            <li>2nd</li>
+            <li>3rd</li>
+            <li>4th</li>
+            <li>5th</li>
+        </ul>
+        <ul class="ranking-people ranking-flex">
+            <li class="bold">Player</li>
+            ${rankingArray.map((player) => `<li>${player.name}</li>`).join("")}
+        </ul>
+        <ul class="ranking-score ranking-flex">
+            <li class="bold">Points</li>
+            ${rankingArray
+              .map((player) => `<li>${player.score} points</li>`)
+              .join("")}
+        </ul>
+</div>
+    `;
+  const header = document.createElement("div");
+  header.classList.add("ranking");
+  const tigerIcon = document.createElement("img");
+  tigerIcon.setAttribute("src", "./assets/podium.png");
+  const rankingHeader = document.createElement("p");
+  rankingHeader.innerText = "Mode Ranking";
 
-//   const player = document.createElement("p");
-//   player.textContent = "Player";
-//   wrapper.append(player);
-//   for (const hofPlayer of ls.familyNameMode.scores) {
-//     place.append((document.createElement("p").textContent = hofPlayer.score));
-//     player.append((document.createElement("p").textContent = hofPlayer.name));
-//   }
-
-//   // const answers = document.createElement("p");
-//   // answers.textContent = "Answers";
-//   // wrapper.append(answers);
-
-//   document.getElementById("app").appendChild(wrapper);
-//   wrapper.append(header);
-//   header.append(tigerIcon, rankingHeader);
-// };
+  return hallOfFame;
+};
