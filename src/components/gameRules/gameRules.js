@@ -1,6 +1,7 @@
 export const gameRules = () => {
   const game = document.createElement("div");
   game.classList.add("rules");
+  game.setAttribute("id", "rules");
   document.getElementById("app").appendChild(game);
 
   const header = document.createElement("div");
