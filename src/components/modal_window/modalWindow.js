@@ -15,13 +15,14 @@ export const modalWindow = (component) => {
   const closeModal = () => {
     modal.remove();
     overlay.remove();
-    if (document.getElementById("rules")) {
-      document.getElementById("rules").remove();
-    }
-    if (document.getElementById("hof")) {
-      document.getElementById("hof").remove();
-    }
+    // if (document.getElementById("rules")) {
+    //   document.getElementById("rules").remove();
+    // }
+    // if (document.getElementById("hof")) {
+    //   document.getElementById("hof").remove();
+    // }
   };
 
   btn.addEventListener("click", closeModal);
+  modal.append(component());
 };

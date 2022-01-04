@@ -22,7 +22,6 @@ function createPosterAndButton(gameWrapper) {
   const posterAndButtonWrapper = document.createElement("div");
   posterAndButtonWrapper.classList.add("poster-and-button");
   posterAndButtonWrapper.append(homePagePoster());
-  // posterAndButtonWrapper.append(btn());
   gameWrapper.append(posterAndButtonWrapper);
 }
 
@@ -48,7 +47,7 @@ export const menuView = () => {
   app.append(gameWrapper);
 
   document.querySelector("#gameRulesButton").addEventListener("click", () => {
-    modalWindow(gameRules());
+    modalWindow(gameRules);
   });
   changePosterByMode();
 };
