@@ -257,14 +257,11 @@ p {
   position: absolute;
   bottom: 20px;
   left: 90px;
-  display: flex;
-  justify-content: flex-end;
   width: 85vw;
   height: 60vh;
   flex-direction: column;
   display: block;
   justify-content: space-between;
-  /* background-color: aquamarine; */
 }
 
 .question-image {
@@ -277,6 +274,16 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+#quiz-question {
+  flex-grow: 1;
+  position: absolute;
+  top: 60px;
+  left: 370px;
+  width: 50%;
+  font-size: clamp(1.5rem, 2.2vw, 3rem);
+  background-color: #353537;
 }
 
 #photo-quiz {
@@ -294,19 +301,21 @@ ul.answer-list {
   grid-template-columns: 50% 50%;
   grid-template-rows: 1fr 1fr;
   grid-row-gap: 2vh;
-  /* background-color: chartreuse; */
   list-style: none;
 }
 
-.answer-list li {
+.answer-text {
   width: 80%;
-  margin: 10px auto;
+  text-align: center;
+  margin: 0 auto;
   background-color: var(--answer-color);
+  cursor: pointer;
 }
 
-li p {
-  text-align: center;
-  font-size: 24px;
+li.answer-text p {
+  margin: 0 auto;
+  font-size: clamp(1.5rem, 2.2vw, 2.6rem);
+  line-height: 90px;
   color: #000;
 }
 

@@ -4,7 +4,6 @@ import {
   GamePlayer,
   storeRankingScores,
 } from "./components/LocalStorageScores/LocalStorageScores";
-
 import clickLogo from "./components/logo/logo";
 import {
   homePagePoster,
@@ -15,7 +14,6 @@ import {
   HumanPlayer,
   createPlayer,
 } from "./components/LogicHumanPlayer/LogicHumanPlayer";
-
 import {
   FAMILY_NAME_MODE,
   newQuestion,
@@ -26,28 +24,19 @@ import { modalWindow } from "./components/modal_window/modalWindow";
 import { btn } from "./components/buttonRules/buttonRules";
 import { menuView } from "./components/MainMenu/MainMenu";
 import { btnHallOfFame } from "./components/buttonHallOfFame/buttonHallOfFame";
-
 import { quizPage } from "./components/answerQuestions/answerQuestions";
 
 let availableIds;
 await apiAccess().then((ids) => (availableIds = ids));
 
-export const presentQuestion = (question) => {
-  document
-    .querySelector("#startButton")
-    .addEventListener("click", quizPage(question));
+const renderQuiz = () => {
+  quizPage(FAMILY_NAME_MODE, availableIds);
 };
 
 const app = () => {
   StartQuiz();
   menuCreator();
   clickLogo();
-  // createTimer();
-  // createHallOfFame();
-  newQuestion(PHOTO_MODE, availableIds).then((currentQuestion) =>
-    console.log(currentQuestion)
-  );
-  // createTimer();
   // createHallOfFame();
   getCurrentGameMode((mode) => console.log(mode));
   btn();
@@ -57,8 +46,9 @@ const app = () => {
   changePosterByMode();
   menuView();
   // startNewQuiz();
+
   const createPromise = () => {
-    const currentQuestionPromise = newQuestion(FAMILY_NAME_MODE, [1, 2, 3, 4]);
+    const currentQuestionPromise = newQuestion(FAMILY_NAME_MODE, availableIds);
     currentQuestionPromise
       .then((currentQuestion) => {
         presentQuestion(currentQuestion);
@@ -81,9 +71,13 @@ const app = () => {
       })
       .catch((e) => console.log(e));
   };
+
+  const addListenerOnButton = () => {
+    renderQuiz();
+  };
   document
     .querySelector("#startButton")
-    .addEventListener("click", createPromise);
+    .addEventListener("click", addListenerOnButton);
 };
 
 export default app;
