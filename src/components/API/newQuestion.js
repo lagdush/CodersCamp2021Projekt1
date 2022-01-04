@@ -44,12 +44,22 @@ export const newQuestion = (mode, availableIds) => {
     });
 };
 
-const isCorrectAnswer = (choosenId, question) => {
-  if (question.correctCharacter.id === choosenId) {
+export const isCorrectAnswer = (choosenName, question, elementId) => {
+  if (question.correctCharacter.fullName === choosenName) {
+    document.getElementById(elementId).classList.add("correct-answer");
     return true;
+  } else {
+    document.getElementById(elementId).classList.add("wrong-answer");
+    return false;
   }
-  return false;
 };
+
+let allLi = document.getElementsByClassName("answer-text");
+export function clearStatusClass() {
+  [].forEach.call(allLi, function (el) {
+    el.classList.remove("wrong-answer", "correct-answer");
+  });
+}
 
 const fetchCharacterById = (id) => {
   const API = "https://thronesapi.com/api/v2/Characters/" + id;

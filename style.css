@@ -12,6 +12,7 @@ li {
   --timer: #353537;
   --table-color: #494949;
   --font-color: #fff;
+  --answer-color: #c4c4c4;
 }
 
 body {
@@ -22,6 +23,13 @@ body {
   height: 100vh;
 }
 
+/* .logo {
+  position: absolute;
+  width: 28vw;
+  height: 25vh;
+  left: 3vw;
+  top: 3vh;} */
+
 #app {
   display: grid;
   grid-template-rows: minmax(150px auto) 1fr;
@@ -31,16 +39,18 @@ body {
 /*TIMER*/
 
 #timer {
-  width: 151px;
-  height: 151px;
+  position: absolute;
+  bottom: 5px;
+  right: 20px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   background-color: var(--timer);
-  line-height: 151px;
+  line-height: 100px;
   text-align: center;
   color: var(--font-color);
-  font-size: 48px;
+  font-size: 30px;
 }
-
 /* MODAL WINDOW */
 
 .modal-window {
@@ -59,6 +69,7 @@ body {
   width: 60px;
   height: 60px;
   font-size: 4rem;
+  line-height: 4rem;
   display: block;
   margin-left: auto;
   margin-right: 20px;
@@ -86,6 +97,32 @@ body {
 }
 
 /* GameRules */
+
+.rules {
+  z-index: 3;
+  display: block;
+  width: 70%;
+  height: 100%;
+  margin: auto;
+  border-radius: 15px;
+  position: relative;
+}
+.rules h1 {
+  font-size: clamp(1.8rem, 2.5vw, 5rem);
+  text-align: center;
+  line-height: 100px;
+}
+
+.rules h2 {
+  font-size: 30px;
+}
+.rules h1,
+h2,
+p {
+  text-align: center;
+  margin: 15px 150px;
+}
+
 .header {
   width: 60%;
   height: 100px;
@@ -95,8 +132,11 @@ body {
 }
 
 .showButton {
-  width: 6vw;
-  height: 12vh;
+  position: relative;
+  top: 405px;
+  left: 180px;
+  width: 5vw;
+  height: 10vh;
   display: grid;
   place-items: center;
   background-color: var(--timer);
@@ -104,23 +144,36 @@ body {
   cursor: pointer;
 }
 
-#HallOfFame {
-  left: 18vw;
-  width: 133px;
-}
 .quest-mark {
-  width: 62px;
-  height: 62px;
+  width: 43px;
+  height: 43px;
 }
 .hof-mark {
   width: 62px;
   height: 62px;
 }
+.button {
+  display: grid;
+  place-items: center;
+  width: 100px;
+  height: 100px;
+  background-color: var(--timer);
+  border-radius: 50%;
+}
+.button:hover {
+  cursor: pointer;
+}
 
 /*POSTER*/
 .poster {
-  height: 540px;
-  border-radius: 10px;
+  /* height: 440px;
+  border-radius: 10px; */
+  position: absolute;
+  /* width: 22vw; */
+  height: 60vh;
+  border-radius: 15px;
+  bottom: 7vh;
+  left: 6vw;
 }
 /* menu */
 
@@ -149,7 +202,7 @@ body {
   color: var(--font-color);
   flex-basis: 100%;
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 3rem;
 }
 .selection {
   text-align: center;
@@ -170,7 +223,7 @@ body {
 }
 
 .gameWrapper {
-  padding-top: 2rem;
+  padding-top: 1rem;
   display: grid;
   grid-template-columns: repeat(2, minmax(auto, 1fr));
   gap: 20px;
@@ -178,7 +231,8 @@ body {
 }
 
 .poster-and-button {
-  width: fit-content;
+  width: 500px;
+  height: 380px;
 }
 
 /*HALL OF FAME*/
@@ -212,7 +266,7 @@ body {
 
 .ranking-header > h2 {
   margin: 0;
-  font-size: 4rem;
+  font-size: 2.8rem;
 }
 
 .ranking-content {
@@ -229,26 +283,115 @@ body {
 
 .bold {
   font-weight: 900;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
 }
 
 .ranking-flex > li:not([class^="bold"]) {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 }
 
 .ranking-flex > li {
-  padding: 0.75rem;
+  padding: 0.6rem;
 }
 
 .startButton {
-  align-self: center;
+  position: absolute;
+  right: 300px;
+  bottom: -15px;
+  /* bottom: -45px; */
+  /* align-self: flex-end; */
   background-color: #34a639;
   border-radius: 10px;
   color: #fff;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   padding: 10px 35px;
   transition: 0.3s;
 }
 .startButton:hover {
   border-radius: 0;
+}
+
+/*QUIZ-PAGE*/
+.quiz-wrapper {
+  display: grid;
+  height: 80vh;
+  width: 100%;
+  grid-template-rows: 10vh 80vh;
+  grid-gap: 5 vh;
+}
+
+.quiz-form {
+  position: absolute;
+  bottom: 20px;
+  left: 90px;
+  width: 85vw;
+  height: 60vh;
+  flex-direction: column;
+  display: block;
+  justify-content: space-between;
+}
+
+.question-image {
+  flex-grow: 1;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  height: 100%;
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#quiz-question {
+  flex-grow: 1;
+  position: absolute;
+  top: 60px;
+  right: 120px;
+  text-align: center;
+  width: 50%;
+  font-size: clamp(1.5rem, 2.2vw, 3rem);
+  background-color: #353537;
+  color: #fff;
+}
+
+#photo-quiz {
+  height: 75%;
+  width: 70%;
+  box-shadow: 2px 2px 5px #000;
+  border-radius: 2vh;
+}
+
+ul.answer-list {
+  display: grid;
+  margin: -40vh 30vw;
+  height: 30vh;
+  width: 60%;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 1fr 1fr;
+  grid-row-gap: 2vh;
+  list-style: none;
+}
+
+.answer-text {
+  width: 80%;
+  text-align: center;
+  margin: 0 auto;
+  background-color: var(--answer-color);
+  cursor: pointer;
+}
+
+li.answer-text p {
+  margin: 0 auto;
+  font-size: clamp(1.5rem, 2.2vw, 2.6rem);
+  line-height: 90px;
+  color: #000;
+}
+
+.wrong-answer {
+  background-color: #ff0000;
+}
+
+.correct-answer {
+  background-color: #41ed25;
 }

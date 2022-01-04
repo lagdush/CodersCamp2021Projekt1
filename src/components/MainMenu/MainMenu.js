@@ -8,7 +8,8 @@ import {
 } from "../Homepage_image/Homepage_image";
 import clickLogo from "../logo/logo";
 import { modalWindow } from "../modal_window/modalWindow";
-import { startButton } from "../startButton";
+// import { startButton } from "../startButton";
+import { StartQuiz } from "../StartQuiz";
 
 function createLogoAndMenu(app) {
   const logoAndMenuWrapper = document.createElement("div");
@@ -30,7 +31,7 @@ function createhallOfFameAndStartButton(gameWrapper) {
   const hofAndStartWrapper = document.createElement("div");
   hofAndStartWrapper.classList.add("hof-and-start");
   hofAndStartWrapper.append(createHallOfFame());
-  hofAndStartWrapper.append(startButton());
+  hofAndStartWrapper.append(StartQuiz());
   gameWrapper.append(hofAndStartWrapper);
 }
 

@@ -41,7 +41,7 @@ export function getCurrentGameMode(passGameMode) {
   const btnCharName = buttons.find((btn) => {
     return btn.innerHTML === "Character-name";
   });
-  btnCharName.classList.add("active");
+  // btnCharName.classList.add("active");
   // Adding active state to clicked button
   function changeColor(e) {
     buttons.map((button) => button.classList.remove("active"));
