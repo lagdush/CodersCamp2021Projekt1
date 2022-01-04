@@ -15,37 +15,32 @@ export const gameOver = () => {
   header.appendChild(timeIsUp);
 
   const text = document.createElement("p");
-  // text.textContent = `Congratulations during 20 seconds you answered ${playerHuman.allAnswer} questions.`;
-  text.textContent = `Congratulations during 20 seconds you answered ... questions.`;
+  // text.textContent = `Congratulations during 20 seconds you answered ${countAnswers()} questions.`;
+  text.textContent = `Congratulations during 20 seconds you answered ... quesions.`;
   header.appendChild(text);
 
   const textCorrect = document.createElement("p");
   textCorrect.className = "textCorrect";
   textCorrect.textContent = `Correct 50%`;
+  // textCorrect.textContent = `Correct ${}%`;
   header.appendChild(textCorrect);
+
+  // the end of header
 
   // create result board
   const results = document.createElement("div");
   results.className = "results";
   game.appendChild(results);
-
-  const resultHeader = document.createElement("div");
-  resultHeader.className = "resultHeader";
-  results.appendChild(resultHeader);
-  resultHeader.innerHTML = `
+  results.innerHTML = `
     <span>Detailed answers:</span>
     <span>Computer</span>
     <span>You</span>
     <span>Correct</span>
     `;
 
-  const resultBody = document.createElement("div");
-  resultBody.className = "resultBody";
-  results.appendChild(resultBody);
-
   const inputField = document.createElement("form");
   inputField.className = "inputField";
-  resultBody.appendChild(inputField);
+  results.appendChild(inputField);
 
   const labelForInput = document.createElement("label");
   labelForInput.className = "labelForInput";
@@ -61,11 +56,24 @@ export const gameOver = () => {
   labelForInput.appendChild(playerName);
   inputField.appendChild(labelForInput);
 
+  const answersTable = document.createElement("div");
+  answersTable.className = "answersTable";
+  results.appendChild(answersTable);
+
   // button
   const btn = document.createElement("input");
-  btn.value = "Submit";
+  btn.value = "Confirm";
   btn.type = "submit";
   btn.className = "submitButton";
 
   inputField.appendChild(btn);
+
+  const returnToMainPage = () => {
+    window.location.reload();
+  };
+
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    returnToMainPage();
+  });
 };

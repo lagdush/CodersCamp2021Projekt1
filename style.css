@@ -206,6 +206,7 @@ p {
 	bottom: 10vh;
 	left: 3vw;
 }
+/*GAME OVER WINDOW*/
 
 .gameOverWindow {
 	position: fixed;
@@ -238,32 +239,39 @@ p {
 }
 
 .results { 
-	/* border: 1px solid red; */
+	display: grid;
+	grid-template-columns: 1fr .9fr .7fr 1fr;
+	grid-template-rows: 0.5fr 2fr;
+	grid-template-areas: 
+		"title1 title2 title3 title4"
+		"inputField result result result";
+	border: 1px solid red;
     width: 90%;
     height: 50vh;
     margin: 7em auto auto auto;
 }
-.resultHeader {
-	display: grid;
-	height: 10%;
-	grid-template-columns: 1fr .7fr .7fr 1fr;
-	font-size: 1.25em;
-}
 
-.resultHeader span {
+.results span {
 	color: white;
 	font-size: 2rem;
 	text-align: center;
 }
 
-.resultBody {
-	display: grid;
-	grid-template-columns: 1fr .7fr .7fr 1fr;
-	/* background-color: #112788; */
-	height: 90%;
+.results > span:nth-child(1) {
+	grid-area: title1;
+}
+.results > span:nth-child(2) {
+	grid-area: title2;
+}
+.results > span:nth-child(3) {
+	grid-area: title3;
+}
+.results > span:nth-child(4) {
+	grid-area: title4;
 }
 
 .inputField {
+	grid-area: inputField;
 	margin: auto;
     color: white;
     text-align: center;
@@ -297,4 +305,10 @@ p {
 .submitButton:hover {
 	background-color: #39883d;
 	cursor: pointer;
+}
+
+.answersTable {
+	background-color: #b6dbb8;
+	grid-area: result;
+	overflow-y: auto;
 }
