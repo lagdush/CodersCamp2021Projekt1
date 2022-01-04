@@ -1,4 +1,4 @@
-import { StartQuiz } from "./components/StartQuiz";
+// import { StartQuiz } from "./components/StartQuiz";
 import { menuCreator, getCurrentGameMode } from "./components/gameMenu";
 import {
   GamePlayer,
@@ -22,9 +22,9 @@ import {
 } from "./components/API/newQuestion";
 import { modalWindow } from "./components/modal_window/modalWindow";
 import { btn } from "./components/buttonRules/buttonRules";
-import { menuView } from "./components/MainMenu/MainMenu";
-import { btnHallOfFame } from "./components/buttonHallOfFame/buttonHallOfFame";
+// import { btnHallOfFame } from "./components/buttonHallOfFame/buttonHallOfFame";
 import { quizPage } from "./components/answerQuestions/answerQuestions";
+import { menuView } from "./components/MainMenu/MainMenu";
 
 let availableIds;
 await apiAccess().then((ids) => (availableIds = ids));
@@ -34,13 +34,13 @@ const renderQuiz = () => {
 };
 
 const app = () => {
-  StartQuiz();
+  // StartQuiz();
   menuCreator();
   clickLogo();
   // createHallOfFame();
   getCurrentGameMode((mode) => console.log(mode));
   btn();
-  btnHallOfFame();
+  // btnHallOfFame();
   let player = new GamePlayer("Ewelina Mężyk", 20);
   storeRankingScores(FAMILY_NAME_MODE, player);
   changePosterByMode();
@@ -78,6 +78,7 @@ const app = () => {
   document
     .querySelector("#startButton")
     .addEventListener("click", addListenerOnButton);
+  // menuView();
 };
 
 export default app;

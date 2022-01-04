@@ -108,8 +108,9 @@ export const quizPage = (mode, availableIds) => {
   quizPageView.classList.add(QUIZ_STYLES.quizPageClass);
   document.getElementById("startButton").remove();
   document.getElementById("gameRulesButton").remove();
-  document.getElementById("HallOfFame").remove();
+  // document.getElementById("HallOfFame").remove();
   document.getElementById("poster").style.display = "none";
+  document.querySelector(".hof-and-start").remove();
 
   //create quiz view
   createQuizForm();
