@@ -263,51 +263,53 @@ body {
 	border-radius: 15px;
 	width: 80%;
 	height: 90%;
-	z-index: 2;
 }
 
 .headerofGameOver {
-	width: 100%;
+	margin-top: 30px;
+  color: white;
+  text-align: center;
 }
 
 .headerofGameOver h1 {
-	font-size: 3.5rem;
 	line-height: 60px;
 }
 
 .headerofGameOver p {
-	font-size: 2.3rem;
+	font-size: 2rem;
 }
 
 .textCorrect {
+  margin-top: 10px;
 	font-weight: bold;
 	color: #34A639;
 }
 
 .results { 
 	display: grid;
-	grid-template-columns: 1fr .9fr .7fr 1fr;
+	grid-template-columns: 1fr .5fr .6fr 1fr;
 	grid-template-rows: 0.5fr 2fr;
 	grid-template-areas: 
 		"title1 title2 title3 title4"
 		"inputField result result result";
-	border: 1px solid red;
-    width: 90%;
-    height: 50vh;
-    margin: 7em auto auto auto;
+  width: 90%;
+  height: 50vh;
+  margin: 5em auto auto auto;
 }
 
 .results span {
 	color: white;
-	font-size: 2rem;
+	font-size: 1.5rem;
 	text-align: center;
 }
 
 .results > span:nth-child(1) {
 	grid-area: title1;
+  
 }
 .results > span:nth-child(2) {
 	grid-area: title2;
+
 }
 .results > span:nth-child(3) {
 	grid-area: title3;
@@ -319,12 +321,12 @@ body {
 .inputField {
 	grid-area: inputField;
 	margin: auto;
-    color: white;
-    text-align: center;
+  color: white;
+  text-align: center;
 }
 
 .labelForInput {
-	font-size: 2rem;
+	font-size: 1.5rem;
 }
 
 .player-input {
@@ -332,20 +334,20 @@ body {
 }
 
 .player-input[type="text"] {
-    font-size: .8em;
+  font-size: .8em;
 	border: none;
 	background-color: #C4C4C4;
 	padding: 8px 13px;
 	width: 80%;
 }
 .submitButton { 
-    background-color: #34A639;
+  background-color: #34A639;
 	border: none;
-    font-size: 2em;
-    color: white;
-    border-radius: 5px;
-    padding: 10px 20px;
-    margin: 0.5em;
+  font-size: 1.5em;
+  color: white;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin: 0.5em;
 }
 
 .submitButton:hover {
@@ -357,4 +359,21 @@ body {
 	background-color: #b6dbb8;
 	grid-area: result;
 	overflow-y: auto;
+}
+
+.answerTableDiv{
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+.answerImage {
+  border: 2px solid;
+  width: 100px;
+  height: 100px;
+  border-radius: 15px;
+}
+
+.answerElement {
+  max-width: 110px;
+  align-self: center;
 }
