@@ -8,7 +8,6 @@ import {
 } from "../Homepage_image/Homepage_image";
 import clickLogo from "../logo/logo";
 import { modalWindow } from "../modal_window/modalWindow";
-// import { startButton } from "../startButton";
 import { StartQuiz } from "../StartQuiz";
 
 function createLogoAndMenu(app) {
@@ -23,15 +22,19 @@ function createPosterAndButton(gameWrapper) {
   const posterAndButtonWrapper = document.createElement("div");
   posterAndButtonWrapper.classList.add("poster-and-button");
   posterAndButtonWrapper.append(homePagePoster());
-  posterAndButtonWrapper.append(btn());
+  // posterAndButtonWrapper.append(btn());
   gameWrapper.append(posterAndButtonWrapper);
 }
 
 function createhallOfFameAndStartButton(gameWrapper) {
+  const buttonWrapper = document.createElement("div");
+  buttonWrapper.classList.add("button-wrapper");
   const hofAndStartWrapper = document.createElement("div");
   hofAndStartWrapper.classList.add("hof-and-start");
   hofAndStartWrapper.append(createHallOfFame());
-  hofAndStartWrapper.append(StartQuiz());
+  buttonWrapper.append(btn());
+  buttonWrapper.append(StartQuiz());
+  hofAndStartWrapper.append(buttonWrapper);
   gameWrapper.append(hofAndStartWrapper);
 }
 

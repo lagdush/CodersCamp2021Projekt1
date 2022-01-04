@@ -6,4 +6,5 @@ export const StartQuiz = () => {
   document.body.appendChild(startB);
   startB.style.textAlign = "center";
   startB.style.textTransform = "uppercase";
+  return startB;
 };

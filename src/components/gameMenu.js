@@ -38,10 +38,6 @@ export function getCurrentGameMode(passGameMode) {
   const buttonsN = document.querySelectorAll(".selection");
   const buttons = [...buttonsN];
   // adding default active state to character-name btn
-  const btnCharName = buttons.find((btn) => {
-    return btn.innerHTML === "Character-name";
-  });
-  // btnCharName.classList.add("active");
   // Adding active state to clicked button
   function changeColor(e) {
     buttons.map((button) => button.classList.remove("active"));

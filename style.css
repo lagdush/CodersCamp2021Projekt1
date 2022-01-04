@@ -23,14 +23,8 @@ body {
   height: 100vh;
 }
 
-/* .logo {
-  position: absolute;
-  width: 28vw;
-  height: 25vh;
-  left: 3vw;
-  top: 3vh;} */
-
 #app {
+  height: 100%;
   display: grid;
   grid-template-rows: minmax(150px auto) 1fr;
   padding: 1.5rem;
@@ -108,7 +102,7 @@ body {
   position: relative;
 }
 .rules h1 {
-  font-size: clamp(1.8rem, 2.5vw, 5rem);
+  /* font-size: clamp(1.8rem, 2.5vw, 5rem); */
   text-align: center;
   line-height: 100px;
 }
@@ -132,15 +126,13 @@ p {
 }
 
 .showButton {
-  position: relative;
-  top: 405px;
-  left: 180px;
-  width: 5vw;
-  height: 10vh;
-  display: grid;
-  place-items: center;
-  background-color: var(--timer);
-  border-radius: 50%;
+  align-self: center;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 10px 35px;
+  transition: 0.3s;
+  background-color: var(--answer-color);
   cursor: pointer;
 }
 
@@ -159,21 +151,13 @@ p {
   height: 100px;
   background-color: var(--timer);
   border-radius: 50%;
-}
-.button:hover {
   cursor: pointer;
 }
 
 /*POSTER*/
 .poster {
-  /* height: 440px;
-  border-radius: 10px; */
-  position: absolute;
-  /* width: 22vw; */
-  height: 60vh;
-  border-radius: 15px;
-  bottom: 7vh;
-  left: 6vw;
+  height: 540px;
+  border-radius: 10px;
 }
 /* menu */
 
@@ -227,7 +211,6 @@ p {
   display: grid;
   grid-template-columns: repeat(2, minmax(auto, 1fr));
   gap: 20px;
-  align-items: center;
 }
 
 .poster-and-button {
@@ -295,15 +278,11 @@ p {
 }
 
 .startButton {
-  position: absolute;
-  right: 300px;
-  bottom: -15px;
-  /* bottom: -45px; */
-  /* align-self: flex-end; */
+  align-self: center;
   background-color: #34a639;
   border-radius: 10px;
   color: #fff;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   padding: 10px 35px;
   transition: 0.3s;
 }
@@ -394,4 +373,11 @@ li.answer-text p {
 
 .correct-answer {
   background-color: #41ed25;
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  width: 100%;
 }

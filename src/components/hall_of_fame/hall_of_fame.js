@@ -1,13 +1,6 @@
 import { checkScoresInLocalStorage } from "../LocalStorageScores/LocalStorageScores";
 
 export const createHallOfFame = () => {
-  // const wrapper = document.createElement("div");
-  // wrapper.classList.add("wrapper");
-  // wrapper.setAttribute("id", "hof");
-  // const header = document.createElement("div");
-  // header.classList.add("ranking");
-  // const tigerIcon = document.createElement("img");
-  // tigerIcon.setAttribute("src", "../public/assets/podium.png");
   const ranking = checkScoresInLocalStorage();
   const rankingArray = ranking.familyNameMode.scores;
   const hallOfFame = document.createElement("div");
