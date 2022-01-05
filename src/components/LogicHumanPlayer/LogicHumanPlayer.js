@@ -1,5 +1,3 @@
-import { Question } from "../API/newQuestion";
-
 class QuestionWrapper {
   constructor(question, choosenCharacter) {
     this.question = question;

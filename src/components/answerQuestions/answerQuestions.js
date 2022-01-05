@@ -12,10 +12,6 @@ export const QUIZ_STYLES = {
   answerListClass: "answer-list",
   answerTextClass: "answer-text",
   questionImageClass: "question-image",
-  wrongAnswerClass: "wrong-answer",
-  correctAnswerClass: "correct-answer",
-  //   answerImageClass: "answer-image",
-  //   questionTextClass: "question-class",
 };
 
 let currentMode;
@@ -33,8 +29,6 @@ const presentNewQuestion = () => {
       currentQuestion = question;
       const imageToRecognize = document.getElementById("photo-quiz");
       imageToRecognize.src = question.correctCharacter.imageUrl;
-      console.log("Got new question!");
-      console.log(question);
 
       for (let i = 0; i <= question.charactersToChoseFrom.length - 1; i++) {
         const namesToChoose = document.getElementById("nameToChoose" + i);
@@ -108,22 +102,11 @@ export const quizPage = (mode, availableIds) => {
   quizPageView.classList.add(QUIZ_STYLES.quizPageClass);
   document.getElementById("startButton").remove();
   document.getElementById("gameRulesButton").remove();
-  // document.getElementById("HallOfFame").remove();
   document.getElementById("poster").style.display = "none";
   document.querySelector(".hof-and-start").remove();
 
   //create quiz view
   createQuizForm();
   presentNewQuestion();
-  createTimer(() => {
-    console.log(
-      "Koniec gry",
-      "lb odpowiedzi:",
-      numberOfQuestions,
-      "lb poprawnych odpowiedzi:",
-      numberOfCorrectAnswers,
-      "lb złych odpowiedzi:",
-      numberOfWrongAnswers
-    );
-  });
+  createTimer(() => {});
 };

@@ -1,52 +1,33 @@
-// import { StartQuiz } from "./components/StartQuiz";
 import { menuCreator, getCurrentGameMode } from "./components/gameMenu";
 import {
   GamePlayer,
   storeRankingScores,
 } from "./components/LocalStorageScores/LocalStorageScores";
 import clickLogo from "./components/logo/logo";
-import {
-  homePagePoster,
-  changePosterByMode,
-} from "./components/Homepage_image/Homepage_image";
+import { changePosterByMode } from "./components/Homepage_image/Homepage_image";
 import { apiAccess } from "./components/API/api";
-import {
-  HumanPlayer,
-  createPlayer,
-} from "./components/LogicHumanPlayer/LogicHumanPlayer";
-import {
-  FAMILY_NAME_MODE,
-  newQuestion,
-  PHOTO_MODE,
-  NAME_MODE,
-} from "./components/API/newQuestion";
-import { modalWindow } from "./components/modal_window/modalWindow";
+import { createPlayer } from "./components/LogicHumanPlayer/LogicHumanPlayer";
+import { FAMILY_NAME_MODE, newQuestion } from "./components/API/newQuestion";
 import { btn } from "./components/buttonRules/buttonRules";
-// import { btnHallOfFame } from "./components/buttonHallOfFame/buttonHallOfFame";
 import { quizPage } from "./components/answerQuestions/answerQuestions";
 import { menuView } from "./components/MainMenu/MainMenu";
 
 let availableIds;
-await apiAccess().then((ids) => (availableIds = ids));
+apiAccess().then((ids) => (availableIds = ids));
 
 const renderQuiz = () => {
   quizPage(FAMILY_NAME_MODE, availableIds);
 };
 
 const app = () => {
-  // StartQuiz();
   menuCreator();
   clickLogo();
-  // createHallOfFame();
-  getCurrentGameMode((mode) => console.log(mode));
+  getCurrentGameMode(() => {});
   btn();
-  // btnHallOfFame();
   let player = new GamePlayer("Ewelina Mężyk", 20);
   storeRankingScores(FAMILY_NAME_MODE, player);
   changePosterByMode();
   menuView();
-  // startNewQuiz();
-
   const createPromise = () => {
     const currentQuestionPromise = newQuestion(FAMILY_NAME_MODE, availableIds);
     currentQuestionPromise
@@ -55,19 +36,13 @@ const app = () => {
 
         const player = createPlayer();
 
-        player.askQuestion(currentQuestion, () =>
-          console.log("question asked!")
-        );
+        player.askQuestion(currentQuestion, () => {});
 
-        player.answer(currentQuestion.charactersToChoseFrom[0], () =>
-          console.log("player has answered!")
-        );
+        player.answer(currentQuestion.charactersToChoseFrom[0], () => {});
 
         const answersCount = player.countAnswers();
-        console.log(`Total answers: ${answersCount}`);
 
         const correctAnswersCOunt = player.countCorrectAnswers();
-        console.log(`Correct answers: ${correctAnswersCOunt}`);
       })
       .catch((e) => console.log(e));
   };
@@ -78,7 +53,6 @@ const app = () => {
   document
     .querySelector("#startButton")
     .addEventListener("click", addListenerOnButton);
-  // menuView();
 };
 
 export default app;
