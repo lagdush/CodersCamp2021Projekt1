@@ -24,7 +24,6 @@ export const gameOver = (gameResults) => {
   text.textContent = `Congratulations during 60 seconds you answered ${gameResults.humanPlayer.questions} questions.`;
   header.appendChild(text);
 
-  // funkcja przeliczająca na procenty?
   const correctAnsPercent = () => {
     const percent =
       (gameResults.humanPlayer.goodAnswers /
@@ -126,7 +125,6 @@ export const gameOver = (gameResults) => {
 
   btn.addEventListener("click", (e) => {
     e.preventDefault();
-    //tutaj dane do rankingu
     const nameOfThePlayer = document.getElementById("player-input").value;
     const player = new GamePlayer(
       nameOfThePlayer,
