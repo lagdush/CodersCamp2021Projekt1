@@ -18,11 +18,17 @@ Projekt został zrealizowany w ramach pierwszego działu kursu CodersCamp2021. P
 Aplikacja zawiera widok desktopowy i jeden tryb gracza.
 
 ## Działanie
-Na ekranie głównym użytkownik ma do dyspozycji przyciski: rozpoczynający grę, informujący o zasadach gry oraz wyświetlający ranking graczy. Rozgrywka rozpoczyna się w momencie wciśnięcia przycisku START. 
+Na ekranie głównym użytkownik ma do dyspozycji przyciski rozpoczynającę grę oraz informujący o zasadach gry. Powyżej wyświetla się tablica z rankingiem graczy. Rozgrywka rozpoczyna się w momencie wciśnięcia przycisku START. 
+
+![main-view](src/image/main_view.png)
 
 Wraz ze startem gry odpalany jest timer odliczający 60 sekund do zakończenia rundy. Użytkownik ma za zadanie rozpoznać postać na obrazku i wybrać prawidłową odpowiedź. W momencie kliknięcia na wybrany przycisk odpowiedzi, użytkownik dostaje informację o poprawności poprzez podświetlenie przycisku na zielono (odpowiedź prawidłowa) lub czerwono (odpowiedź błędna). Po udzieleniu odpowiedzi automatycznie generowane są kolejne obrazki, aż do końca rundy.
 
-Po upłynięciu czasu rozgrywka jest przerywana i wyświetla się okno z podsumowaniem. Pojawia się informacja z ilością pytań, na które odpowiedział gracz. Poniżej wyświetla się lista z poszczególnymi obrazkami wraz z porównaniem prawidłowej odpowiedzi oraz tej wybranej przez gracza. Obok listy użytkownik wpisuje swoje dane  (imię/nick), klikając przycisk ZAPISZ informacje o rozgrywce zapisują się w pamięci przeglądarki i są później dostępne do odczytu w tabeli rankingu graczy na ekranie głównym aplikacji. Po tym działaniu użytkownik automatycznie wraca do ekranu startowego.
+![game-view](src/image/game_view.png)
+
+Po upłynięciu czasu rozgrywka jest przerywana i wyświetla się okno z podsumowaniem. Pojawia się informacja z ilością pytań, na które odpowiedział gracz i procentowy wynik rozgrywki gracza oraz informacje o liczbie poprawnych oraz błędnych odpowiedzi gracza i komputera. Obok użytkownik wpisuje swoje dane  (imię/nick), klikając przycisk CONFIRM informacje o rozgrywce zapisują się w pamięci przeglądarki i są później dostępne do odczytu w tabeli rankingu graczy na ekranie głównym aplikacji. Po tym działaniu użytkownik automatycznie wraca do ekranu startowego.
+
+![over-view](src/image/over_view.png)
 
 
 ## Technologie
