@@ -20,15 +20,15 @@ Aplikacja zawiera widok desktopowy i jeden tryb gracza.
 ## Działanie
 Na ekranie głównym użytkownik ma do dyspozycji przyciski rozpoczęcia gry i wyświetlający o zasadach gry. Powyzej widać tablicę z rankingiem graczy. Rozgrywka rozpoczyna się w momencie wciśnięcia przycisku START. 
 
-![main-view](src/image/main_view.png)
+![main-view](src/image/main_view.PNG)
 
 Wraz ze startem gry odpalany jest timer odliczający 60 sekund do zakończenia rundy. Użytkownik ma za zadanie rozpoznać postać na obrazku i wybrać prawidłową odpowiedź. W momencie kliknięcia na wybrany przycisk odpowiedzi, użytkownik dostaje informację o poprawności poprzez podświetlenie przycisku na zielono (odpowiedź prawidłowa) lub czerwono (odpowiedź błędna). Po udzieleniu odpowiedzi automatycznie generowane są kolejne obrazki, aż do końca rundy.
 
-![game-view](src/image/game_view.png)
+![game-view](src/image/game_view.PNG)
 
 Po upłynięciu czasu rozgrywka jest przerywana i wyświetla się okno z podsumowaniem. Pojawia się informacja z ilością pytań, na które odpowiedział gracz oraz wynikiem procentowym. Poniżej wyświetla się ilość poprawnych i błędnych odpowiedzi udzielonych przez gracza i przez komputer. Obok użytkownik wpisuje swoje dane  (imię/nick), klikając przycisk CONFIRM informacje o rozgrywce zapisują się w pamięci przeglądarki i są później dostępne do odczytu w tabeli rankingu graczy na ekranie głównym aplikacji. Po tym działaniu użytkownik automatycznie wraca do ekranu startowego.
 
-![over_view](src/image/over_view.png)
+![over_view](src/image/over_view.PNG)
 
 ## Technologie
 * HTML
