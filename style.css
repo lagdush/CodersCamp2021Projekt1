@@ -467,6 +467,13 @@ li.answer-text p {
   margin: 2em auto;
 }
 
+.player-input[type="text"] {
+  border: none;
+  background-color: #C4C4C4;
+  padding: 8px 13px;
+}
+
+
 .answersTable {
   grid-area: result1;
 }
@@ -482,10 +489,26 @@ li.answer-text p {
 .totalAnswers {
   max-width: 25vw;
   height: fit-content;
+  
 }
 .answerTableDiv,
 .playerAnswer,
 .totalAnswers p {
   font-size: 1.5rem;
   color: #fff;
+}
+
+.submitButton { 
+  background-color: #34A639;
+    border: none;
+  font-size: 1.5em;
+  color: white;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin: 0.5em;
+}
+
+.submitButton:hover {
+    background-color: #39883d;
+    cursor: pointer;
 }

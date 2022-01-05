@@ -1,10 +1,10 @@
-import { HumanPlayer } from "../LogicHumanPlayer/LogicHumanPlayer";
-import { getGameResult } from "../answerQuestions/answerQuestions";
+// import { HumanPlayer } from "../LogicHumanPlayer/LogicHumanPlayer";
+// import { getGameResult } from "../answerQuestions/answerQuestions";
 import {
   GamePlayer,
   storeRankingScores,
-} from "../../components/LocalStorageScores/LocalStorageScores";
-import { NAME_MODE } from "../../components/API/newQuestion";
+} from "../LocalStorageScores/LocalStorageScores";
+import { NAME_MODE } from "../API/newQuestion";
 
 export const gameOver = (gameResults) => {
   const game = document.createElement("div");
@@ -26,10 +26,9 @@ export const gameOver = (gameResults) => {
 
   const correctAnsPercent = () => {
     const percent =
-      (gameResults.humanPlayer.goodAnswers /
-        gameResults.humanPlayer.questions) *
-      gameResults.humanPlayer.questions;
-    return percent * 10;
+      gameResults.humanPlayer.goodAnswers / gameResults.humanPlayer.questions;
+
+    return (percent * 100).toFixed();
   };
 
   const textCorrect = document.createElement("p");
@@ -86,24 +85,20 @@ export const gameOver = (gameResults) => {
 
   const correctAnswerElement = document.createElement("p");
   correctAnswerElement.className = "answerElement";
-  correctAnswerElement.innerText =
-    "correct: " + gameResults.computerPlayer.goodAnswers;
+  correctAnswerElement.innerText = `correct: ${gameResults.computerPlayer.goodAnswers}`;
 
   const wrongAnswerElement = document.createElement("p");
   wrongAnswerElement.className = "answerElement";
-  wrongAnswerElement.innerText =
-    "incorrect: " + gameResults.computerPlayer.wrongAnswers;
+  wrongAnswerElement.innerText = `incorrect: ${gameResults.computerPlayer.wrongAnswers}`;
   answerTableDiv.append(correctAnswerElement, wrongAnswerElement);
 
   const playerNumCorAnswers = document.createElement("p");
   playerNumCorAnswers.className = "answerElement";
-  playerNumCorAnswers.innerText =
-    "correct: " + gameResults.humanPlayer.goodAnswers;
+  playerNumCorAnswers.innerText = `correct: ${gameResults.humanPlayer.goodAnswers}`;
 
   const playerNumWrongAnswers = document.createElement("p");
   playerNumWrongAnswers.className = "answerElement";
-  playerNumWrongAnswers.innerText =
-    "incorrect: " + gameResults.humanPlayer.wrongAnswers;
+  playerNumWrongAnswers.innerText = `incorrect: ${gameResults.humanPlayer.wrongAnswers}`;
 
   playerAnswersDiv.append(playerNumCorAnswers, playerNumWrongAnswers);
 
@@ -130,8 +125,8 @@ export const gameOver = (gameResults) => {
       nameOfThePlayer,
       gameResults.humanPlayer.goodAnswers
     );
-    console.log(nameOfThePlayer);
-    console.log(player);
+    // console.log(nameOfThePlayer);
+    // console.log(player);
     storeRankingScores(NAME_MODE, player);
     refresh();
   });
