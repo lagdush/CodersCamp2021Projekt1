@@ -1,4 +1,6 @@
+import { gameRules } from "../gameRules/gameRules";
 import { modalWindow } from "../modal_window/modalWindow";
+import { gameOver } from "../gameOverWindow/gameOverWindow";
 
 export const createTimer = (getGameResult) => {
   const timer = document.createElement("div");
@@ -11,8 +13,8 @@ export const createTimer = (getGameResult) => {
     if (timeLeft <= 0) {
       clearInterval(downloadTimer);
       document.getElementById("timer").innerHTML = "00:00";
-      modalWindow();
-      getGameResult();
+      gameOver(getGameResult());
+      console.log(getGameResult());
       return;
     }
     timeLeft -= 1;

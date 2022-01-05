@@ -94,6 +94,24 @@ const createQuizForm = () => {
   }
 };
 
+export const getGameResult = () => {
+  const randomComputerGoodAnswers = Math.floor(
+    Math.random() * numberOfQuestions
+  );
+  return {
+    humanPlayer: {
+      questions: numberOfQuestions,
+      goodAnswers: numberOfCorrectAnswers,
+      wrongAnswers: numberOfWrongAnswers,
+    },
+    computerPlayer: {
+      questions: numberOfQuestions,
+      goodAnswers: randomComputerGoodAnswers,
+      wrongAnswers: numberOfQuestions - randomComputerGoodAnswers,
+    },
+  };
+};
+
 export const quizPage = (mode, availableIds) => {
   currentMode = mode;
   currentAvailableIds = availableIds;
@@ -108,5 +126,5 @@ export const quizPage = (mode, availableIds) => {
   //create quiz view
   createQuizForm();
   presentNewQuestion();
-  createTimer(() => {});
+  createTimer(getGameResult);
 };

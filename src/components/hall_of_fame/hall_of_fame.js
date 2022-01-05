@@ -2,7 +2,7 @@ import { checkScoresInLocalStorage } from "../LocalStorageScores/LocalStorageSco
 
 export const createHallOfFame = () => {
   const ranking = checkScoresInLocalStorage();
-  const rankingArray = ranking.familyNameMode.scores;
+  const rankingArray = ranking.nameMode.scores;
   const hallOfFame = document.createElement("div");
   hallOfFame.classList.add("hall-of-fame-wrapper");
   hallOfFame.innerHTML = `

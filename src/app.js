@@ -11,6 +11,10 @@ import { FAMILY_NAME_MODE, newQuestion } from "./components/API/newQuestion";
 import { btn } from "./components/buttonRules/buttonRules";
 import { quizPage } from "./components/answerQuestions/answerQuestions";
 import { menuView } from "./components/MainMenu/MainMenu";
+import {
+  ComputerPlayer,
+  createComputerPlayer,
+} from "./components/LogicComputerPlayer/LogicComputerPlayer";
 
 let availableIds;
 apiAccess().then((ids) => (availableIds = ids));
@@ -28,25 +32,6 @@ const app = () => {
   storeRankingScores(FAMILY_NAME_MODE, player);
   changePosterByMode();
   menuView();
-  const createPromise = () => {
-    const currentQuestionPromise = newQuestion(FAMILY_NAME_MODE, availableIds);
-    currentQuestionPromise
-      .then((currentQuestion) => {
-        presentQuestion(currentQuestion);
-
-        const player = createPlayer();
-
-        player.askQuestion(currentQuestion, () => {});
-
-        player.answer(currentQuestion.charactersToChoseFrom[0], () => {});
-
-        const answersCount = player.countAnswers();
-
-        const correctAnswersCOunt = player.countCorrectAnswers();
-      })
-      .catch((e) => console.log(e));
-  };
-
   const addListenerOnButton = () => {
     renderQuiz();
   };
