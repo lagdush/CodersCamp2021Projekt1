@@ -1,5 +1,3 @@
-// import { HumanPlayer } from "../LogicHumanPlayer/LogicHumanPlayer";
-// import { getGameResult } from "../answerQuestions/answerQuestions";
 import {
   GamePlayer,
   storeRankingScores,
@@ -125,8 +123,6 @@ export const gameOver = (gameResults) => {
       nameOfThePlayer,
       gameResults.humanPlayer.goodAnswers
     );
-    // console.log(nameOfThePlayer);
-    // console.log(player);
     storeRankingScores(NAME_MODE, player);
     refresh();
   });
