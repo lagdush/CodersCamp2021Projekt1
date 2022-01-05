@@ -272,7 +272,7 @@ p {
 .ranking-flex {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -511,4 +511,5 @@ li.answer-text p {
 .submitButton:hover {
     background-color: #39883d;
     cursor: pointer;
+    /* border: 1px solid; */
 }
