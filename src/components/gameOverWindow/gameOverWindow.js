@@ -73,13 +73,17 @@ export const gameOver = (gameResults) => {
   answerTableDiv.className = "answerTableDiv";
   answersTable.appendChild(answerTableDiv);
 
+  const cpuTableDiv = document.createElement("div");
+  cpuTableDiv.className = "cpuAnswer";
+  answerTableDiv.appendChild(cpuTableDiv);
+
   const playerAnswersDiv = document.createElement("div");
   playerAnswersDiv.className = "playerAnswer";
-  results.appendChild(playerAnswersDiv);
+  answerTableDiv.appendChild(playerAnswersDiv);
 
   const totalAnswersDiv = document.createElement("div");
   totalAnswersDiv.className = "totalAnswers";
-  results.appendChild(totalAnswersDiv);
+  answerTableDiv.appendChild(totalAnswersDiv);
 
   const correctAnswerElement = document.createElement("p");
   correctAnswerElement.className = "answerElement";
@@ -88,7 +92,8 @@ export const gameOver = (gameResults) => {
   const wrongAnswerElement = document.createElement("p");
   wrongAnswerElement.className = "answerElement";
   wrongAnswerElement.innerText = `incorrect: ${gameResults.computerPlayer.wrongAnswers}`;
-  answerTableDiv.append(correctAnswerElement, wrongAnswerElement);
+
+  cpuTableDiv.append(correctAnswerElement, wrongAnswerElement);
 
   const playerNumCorAnswers = document.createElement("p");
   playerNumCorAnswers.className = "answerElement";
@@ -101,7 +106,7 @@ export const gameOver = (gameResults) => {
   playerAnswersDiv.append(playerNumCorAnswers, playerNumWrongAnswers);
 
   const totalAnswerElement = document.createElement("p");
-  totalAnswerElement.className = "totalAnswer";
+  totalAnswerElement.className = "answerElement totalAnswers";
   totalAnswerElement.innerText = gameResults.humanPlayer.questions;
   totalAnswersDiv.appendChild(totalAnswerElement);
 
