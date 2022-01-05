@@ -3,6 +3,7 @@ import { FAMILY_NAME_MODE } from "./components/API/newQuestion";
 import { quizPage } from "./components/answerQuestions/answerQuestions";
 import { menuView } from "./components/MainMenu/MainMenu";
 
+/* eslint-disable no-return-assign */
 let availableIds;
 apiAccess().then((ids) => {
   availableIds = ids;
