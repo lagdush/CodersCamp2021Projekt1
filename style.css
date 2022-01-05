@@ -511,4 +511,5 @@ li.answer-text p {
 .submitButton:hover {
     background-color: #39883d;
     cursor: pointer;
+    /* border: 1px solid; */
 }
