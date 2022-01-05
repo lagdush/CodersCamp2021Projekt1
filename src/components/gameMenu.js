@@ -13,11 +13,9 @@ const mapToMode = (innerHtml) => {
   }
 };
 
-// creating game menu
 export const menuCreator = () => {
   const container = document.createElement("div");
   container.classList.add("menu");
-
   const choose = document.createElement("div");
   choose.classList.add("choose");
   choose.innerHTML = "Choose your quiz";
@@ -37,7 +35,6 @@ export function getCurrentGameMode(passGameMode) {
   // getting buttons and conv to array
   const buttonsN = document.querySelectorAll(".selection");
   const buttons = [...buttonsN];
-  // adding default active state to character-name btn
   // Adding active state to clicked button
   function changeColor(e) {
     buttons.map((button) => button.classList.remove("active"));

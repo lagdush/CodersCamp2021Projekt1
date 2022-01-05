@@ -1,13 +1,7 @@
-export class QuestionWrapper {
-  constructor(question, choosenCharacter) {
-    this.question = question;
-    this.choosenCharacter = choosenCharacter;
-  }
-}
+import { QuestionWrapper } from "../LogicHumanPlayer/LogicHumanPlayer";
 
-export class HumanPlayer {
-  constructor(playerName) {
-    this.playerName = "";
+export class ComputerPlayer {
+  constructor() {
     this.questionWrappers = [];
     this.currentQuestion = null;
   }
@@ -30,7 +24,12 @@ export class HumanPlayer {
     callback();
   }
 
-  answer(choosenCharacter, callback) {
+  computerAnswer(callback) {
+    const randomIndex = Math.floor(
+      Math.random() * this.currentQuestion.charactersToChoseFrom.length
+    );
+    const choosenCharacter =
+      this.currentQuestion.charactersToChoseFrom[randomIndex];
     this.questionWrappers.push(
       new QuestionWrapper(this.currentQuestion, choosenCharacter)
     );
@@ -39,6 +38,6 @@ export class HumanPlayer {
   }
 }
 
-export function createPlayer() {
-  return new HumanPlayer();
+export function createComputerPlayer() {
+  return new ComputerPlayer();
 }

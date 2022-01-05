@@ -27,7 +27,7 @@ body {
   height: 100%;
   display: grid;
   grid-template-rows: minmax(150px auto) 1fr;
-  padding: 1.5rem;
+  padding: 1.2rem;
 }
 
 /*TIMER*/
@@ -90,7 +90,7 @@ body {
   opacity: 0.7;
 }
 
-/* GameRules */
+/* GAME-RULES */
 
 .rules {
   width: 70%;
@@ -104,6 +104,7 @@ body {
   text-align: center;
   line-height: 100px;
   font-size: 3rem;
+  margin: 15px;
 }
 
 .rules h2,
@@ -111,12 +112,14 @@ h1 {
   text-align: center;
   font-size: 30px;
 }
-.rules h1,
-h2,
+.rules h2,
 p {
   margin: 15px 150px;
 }
 
+.rules p {
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+}
 .header {
   width: 60%;
   height: 100px;
@@ -134,8 +137,13 @@ p {
   transition: 0.3s;
   background-color: var(--answer-color);
   cursor: pointer;
+  transition: 0.3s;
+  text-transform: uppercase;
 }
 
+.showButton:hover {
+  border-radius: 0;
+}
 .quest-mark {
   width: 43px;
   height: 43px;
@@ -155,8 +163,16 @@ p {
 }
 
 /*POSTER*/
+
+.poster-and-button {
+  width: 30vw;
+  align-items: center;
+}
+
 .poster {
-  height: 540px;
+  display: block;
+  height: 440px;
+  margin: 0 auto;
   border-radius: 10px;
 }
 /* menu */
@@ -165,6 +181,7 @@ p {
   display: flex;
   flex-basis: 100%;
   justify-content: space-between;
+  max-height: 30vh;
 }
 
 /*LOGO*/
@@ -211,11 +228,6 @@ p {
   display: grid;
   grid-template-columns: repeat(2, minmax(auto, 1fr));
   gap: 20px;
-}
-
-.poster-and-button {
-  width: 500px;
-  height: 380px;
 }
 
 /*HALL OF FAME*/
@@ -285,19 +297,13 @@ p {
   font-size: 1.5rem;
   padding: 10px 35px;
   transition: 0.3s;
+  cursor: pointer;
 }
 .startButton:hover {
   border-radius: 0;
 }
 
 /*QUIZ-PAGE*/
-.quiz-wrapper {
-  display: grid;
-  height: 80vh;
-  width: 100%;
-  grid-template-rows: 10vh 80vh;
-  grid-gap: 5 vh;
-}
 
 .quiz-form {
   position: absolute;
@@ -326,7 +332,7 @@ p {
   flex-grow: 1;
   position: absolute;
   top: 60px;
-  right: 120px;
+  right: -15px;
   text-align: center;
   width: 50%;
   font-size: clamp(1.5rem, 2.2vw, 3rem);
@@ -335,10 +341,11 @@ p {
 }
 
 #photo-quiz {
-  height: 75%;
-  width: 70%;
+  height: 80%;
+  max-width: 35vw;
   box-shadow: 2px 2px 5px #000;
   border-radius: 2vh;
+  margin: 10px;
 }
 
 ul.answer-list {
@@ -380,4 +387,105 @@ li.answer-text p {
   justify-content: center;
   gap: 4rem;
   width: 100%;
+}
+/*GAME OVER WINDOW*/
+
+.gameOverWindow {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #494949;
+  border-radius: 15px;
+  width: 80%;
+  height: 90%;
+}
+
+.headerofGameOver {
+  margin-top: 30px;
+  color: white;
+  text-align: center;
+}
+
+.headerofGameOver h1 {
+  line-height: 60px;
+}
+
+.headerofGameOver p {
+  font-size: 2rem;
+}
+
+.textCorrect {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #34a639;
+}
+
+.results {
+  display: grid;
+  grid-template-columns: 1fr 0.5fr 0.6fr 1fr;
+  grid-template-rows: 0.5fr 2fr;
+  grid-template-areas:
+    "title1 title2 title3 title4"
+    "inputField result1 result2 result3";
+  width: 90%;
+  height: 50vh;
+  margin: 5em auto auto auto;
+}
+
+.results span {
+  color: white;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.results > span:nth-child(1) {
+  grid-area: title1;
+}
+.results > span:nth-child(2) {
+  grid-area: title2;
+}
+.results > span:nth-child(3) {
+  grid-area: title3;
+}
+.results > span:nth-child(4) {
+  grid-area: title4;
+}
+
+.inputField {
+  grid-area: inputField;
+  margin: auto;
+  color: white;
+  text-align: center;
+}
+
+.labelForInput {
+  font-size: 1.5rem;
+}
+
+.player-input {
+  margin: 2em auto;
+}
+
+.answersTable {
+  grid-area: result1;
+}
+.playerAnswer {
+  grid-area: result2;
+}
+.totalAnswers {
+  grid-area: result3;
+}
+
+.answerTableDiv,
+.playerAnswer,
+.totalAnswers {
+  max-width: 25vw;
+  height: fit-content;
+}
+.answerTableDiv,
+.playerAnswer,
+.totalAnswers p {
+  font-size: 1.5rem;
+  color: #fff;
 }
