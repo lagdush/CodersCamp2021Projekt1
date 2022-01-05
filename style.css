@@ -427,7 +427,7 @@ li.answer-text p {
   grid-template-rows: 0.5fr 2fr;
   grid-template-areas:
     "title1 title2 title3 title4"
-    "inputField result1 result2 result3";
+    "inputField result result result";
   width: 90%;
   height: 50vh;
   margin: 5em auto auto auto;
@@ -471,31 +471,37 @@ li.answer-text p {
   border: none;
   background-color: #C4C4C4;
   padding: 8px 13px;
+  width: 80%;
 }
 
 
 .answersTable {
-  grid-area: result1;
-}
-.playerAnswer {
-  grid-area: result2;
-}
-.totalAnswers {
-  grid-area: result3;
+  grid-area: result;
+  overflow-y: auto;
 }
 
-.answerTableDiv,
-.playerAnswer,
-.totalAnswers {
-  max-width: 25vw;
-  height: fit-content;
+.answerTableDiv{
+  padding-top: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
   
 }
-.answerTableDiv,
+
+.cpuAnswer,
 .playerAnswer,
-.totalAnswers p {
-  font-size: 1.5rem;
+.totalAnswers {
+  max-width: 10vw;
+  margin-left: 20px;
+  
+}
+
+.answerElement {
+  width: 120px;
   color: #fff;
+  font-size: 1.3rem;
+  margin: 0;
+  padding-bottom: 5px;
 }
 
 .submitButton { 
@@ -511,5 +517,4 @@ li.answer-text p {
 .submitButton:hover {
     background-color: #39883d;
     cursor: pointer;
-    /* border: 1px solid; */
 }
