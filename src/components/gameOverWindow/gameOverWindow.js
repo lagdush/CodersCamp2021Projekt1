@@ -4,12 +4,7 @@ import {
 } from "../LocalStorageScores/LocalStorageScores";
 import { NAME_MODE } from "../API/newQuestion";
 
-export const gameOver = (gameResults) => {
-  const game = document.createElement("div");
-  game.classList.add("gameOverWindow");
-  document.getElementById("app").appendChild(game);
-
-  // create header
+const createHeader = () => {
   const header = document.createElement("div");
   header.classList.add("headerofGameOver");
   game.appendChild(header);
@@ -33,7 +28,14 @@ export const gameOver = (gameResults) => {
   textCorrect.className = "textCorrect";
   textCorrect.textContent = `Correct ${correctAnsPercent()}%`;
   header.appendChild(textCorrect);
-  // the end of header
+}
+
+export const gameOver = (gameResults) => {
+  const game = document.createElement("div");
+  game.classList.add("gameOverWindow");
+  document.getElementById("app").appendChild(game);
+
+  createHeader();
 
   // create result board
   const results = document.createElement("div");

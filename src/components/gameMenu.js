@@ -1,6 +1,14 @@
 import { PHOTO_MODE, NAME_MODE, FAMILY_NAME_MODE } from "./API/newQuestion";
 
+const modes = {
+  "Character-name": PHOTO_MODE,
+  "Name-character": NAME_MODE,
+  "Character-family": FAMILY_NAME_MODE
+}
+
 const mapToMode = (innerHtml) => {
+  return modes[innerHtml]; // krótszy i czytelniejszy zapis, omija niepotrzebną składnię, ew. dodać `if`, jeżeli chcemy obsługiwać error
+
   switch (innerHtml) {
     case "Character-name":
       return PHOTO_MODE;
